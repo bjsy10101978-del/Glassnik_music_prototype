@@ -1,7 +1,14 @@
-# Local demo audio is manually sourced and should not be committed by default
-public/audio/*.mp3
+# The 59 shipped app tracks (public/audio) ARE committed as of 29 Oct 2026:
+# team decision - public runnable repo (audio ships as app assets).
+# The audio-pool source recordings stay out, as always.
 .DS_Store
 .env
 .env.*
-# assets/audio-pool/
 assets/audio-pool
+node_modules/
+dist/
+*.zip
+
+# never commit the upload zips or mac junk
+*.zip
+.DS_Store
