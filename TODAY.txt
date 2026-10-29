@@ -871,3 +871,63 @@ THE FIVE SONGS OF THE AFTERNOON (28 October, later)
   download evidence; the formal per-track licence pass is deferred
   while this is a research prototype and will be completed before any
   real launch."
+
+---------------------------------------------------------------
+29 OCTOBER - THE REPOSITORY IS LIVE AND PROVEN RUNNABLE
+---------------------------------------------------------------
+
+- The full prototype is now on GitHub (repo: Glassnik_music_prototype,
+  account bjsy10101978-del). The commit "Add full prototype" contains
+  120 files: all source, data, tests, docs, and all 59 shipped tracks
+  in public/audio (the audio-pool source recordings stay out, as
+  always). No junk went in: no zips, no node_modules, no dist folder.
+  The history sits cleanly on top of the two earlier manual uploads -
+  nothing was force-pushed.
+
+- How it got there: the AI prepared the local git repository (init,
+  history alignment, .gitignore updates, the clean commit), but the
+  push itself needed the owner's login. Terminal push failed (no
+  token), so the push was done by the owner in GitHub Desktop -
+  "Push origin", one click. That works; Desktop is the upload path
+  for future commits too (Terminal push needs a Personal Access
+  Token the owner has not created).
+
+- The repo was PUBLIC for a short time and was verified complete from
+  the outside (GitHub's file listing showed every file and all 59
+  tracks, HEAD matching the prepared commit). The owner then switched
+  it to PRIVATE the same evening. Re-checking from outside now
+  returns 404 - to the world the repo no longer exists. Access for
+  the manager (or anyone) now requires an invite:
+  Settings -> Collaborators -> Add people.
+
+- FRESH-CLONE TEST (run while the repo was still public): a stranger's
+  copy was made into an empty folder, then:
+    * clone: OK - 120 files, 59 songs
+    * npm install: OK
+    * audio verifier: OK - 112.6 minutes, 59 records, every file a
+      readable MP3, all different, catalogue matches
+    * unit tests: 113 of 114 passed, 1 failed
+  So the repo IS runnable by anyone with two commands
+  (npm install, npm run dev).
+
+- THE 1 FAILED TEST, explained honestly: it was not an app bug. That
+  test scans assets/audio-pool/ - the original source-recordings
+  folder, which is deliberately NOT committed (rights rule). On the
+  developer machine the folder exists (test passes); in a fresh clone
+  it does not (test tripped). Fixed the same evening: the test now
+  skips itself honestly on fresh clones and runs as normal where the
+  pool exists (commit 9a40f68). Verified after the fix:
+    * developer machine: 114 of 114 passed
+    * fresh-clone simulation: 113 passed + 1 skipped, 0 failed,
+      audio verifier OK
+  A skip is recorded as a skip - not as a pass.
+
+- The project folder now lives in Google Drive ("My Drive" >
+  glassnik-music-prototype), moved there by the owner from the
+  Desktop. Git survived the move intact: working tree clean, history
+  unchanged, all 120 files and 59 songs present. The two helper zips
+  from the upload remain in the folder but are excluded from git.
+
+- The licence register is unchanged: 0 of 59 rows verified, the
+  "music rights unverified" badge stays in the app, and the 28 October
+  deferral decision stands as written above.
