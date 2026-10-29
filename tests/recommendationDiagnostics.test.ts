@@ -25,6 +25,10 @@ import { buildContext, recommend } from '../src/engine/recommender';
 
 const ROOT = process.cwd();
 const POOL_DIR = path.join(ROOT, 'assets', 'audio-pool');
+// assets/audio-pool/ holds the original source recordings and is deliberately
+// NOT committed (rights rule: only the shipped app tracks in public/audio are).
+// On the developer machine the folder exists; on a fresh clone it does not.
+const POOL_DIR_EXISTS = fs.existsSync(POOL_DIR);
 
 function poolFilesOnDisk(): string[] {
   return fs
@@ -51,7 +55,10 @@ const SIMPLE_EXPERIENCES = [
 ];
 
 describe('audio library diagnostics', () => {
-  it('scans the pool folder and registers every real audio file', () => {
+  // Runs only where assets/audio-pool/ exists (developer machine). On a fresh
+  // clone this test skips, because the source-recordings folder is intentionally
+  // not part of the repository - skipping here is the honest result, not a pass.
+  (POOL_DIR_EXISTS ? it : it.skip)('scans the pool folder and registers every real audio file', () => {
     const onDisk = poolFilesOnDisk();
     console.log(`\n[a] audio files found in assets/audio-pool/ : ${onDisk.length}`);
     console.log(`    -> ${onDisk.join(', ')}`);
