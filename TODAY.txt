@@ -1,0 +1,873 @@
+---------------------------------------------------------------
+MESSAGE FOR THE MANAGER - 28 OCTOBER (READY TO COPY & SHARE)
+---------------------------------------------------------------
+
+Here is where the Glassnik music prototype stands today: every task
+assigned for this phase has been completed, and the repository is ready
+for submission.
+
+The work went step by step. First, I turned the original idea into a
+working app: a browser-based music prototype where music follows the
+Eye-POV Experience you are watching - chosen by its Category, Place and
+Location - and keeps playing while you move through the videos inside
+that grouping. The viewer never shows track or artist names over the
+videos; song names and the rights status live on a separate Music
+credits page, and a simple three-option music menu covers the platform
+brief. Music only starts on the user's click (no autoplay), never plays
+as a standalone jukebox, and users can never download the audio files.
+
+Second, I grew the music from placeholders into a real library: 59 real
+recordings (55 full songs plus 4 short excerpts), every one a different
+file - proven by checksums, durations and audio measurements - about
+112.6 minutes of music in total. Each of the 21 upload categories now
+owns its own separate music pool, and the six rarest categories (historic
+sites, festivals, wellness, adventure, family, rainy day) received songs
+of their own during 28 October, exactly as the brief asked. When a
+re-downloaded song turned out to be the same recording as one already in
+the library, the duplicate was removed and the existing song moved to the
+new category instead - a recording is never allowed to sit in two pools.
+One honest footnote: museums now holds 2 songs of the agreed 3-4 and owes
+a replacement, and adventure runs on 1 song.
+
+Third, quality. The build is protected by tests that fail loudly on any
+drift (wrong pool sizes, repeated titles, stale files): 114 automated
+unit tests pass, and 56 real-browser checks pass on BOTH the Chromium
+engine and Safari's own WebKit engine. The Safari manual checklist (no
+sound before Play, automatic next song, the shopping rotation) was
+confirmed by eye in the real browser. The production build passes, and
+the audio verifier confirms all 59 files are readable, unique and
+correctly measured.
+
+Fourth, rights. Nothing was scraped or taken from an unclear source:
+every recording's real Pixabay identity - creator, title, item ID,
+exact download URL and download date - was recovered from the files' own
+download records and saved in writing (data/download-stamps.json and the
+licence evidence folder). The Pixabay rules themselves (licence summary,
+FAQ, and full terms - including the duty to stop using a track
+immediately if any claim ever arrives) are captured and dated in
+docs/licensing-and-sourcing.md. The app follows the licence's safety
+rules by design, and any single track can be removed with one catalogue
+entry plus a rebuild. The formal row-by-row licence pass over all 59
+recordings was deferred as a team decision for the prototype phase: the
+59-row register and the full verification workflow are prepared and
+documented, to be completed before any real launch. Until then the app
+itself honestly says "music rights unverified" - on purpose, so it never
+claims more than was actually done.
+
+Fifth, everything is written down for the next person: TODAY.txt (the
+team log - newest state at the top, dated history below), plus documents
+on playback architecture, licensing and sourcing, the library expansion
+plan, the integration guide and platform compatibility.
+
+What remains open is small and tracked: one replacement song for the
+museums collection (and one more for adventure - a half-finished download
+is waiting in the Downloads folder), real-device checks in Android/iPhone
+app containers, and the deferred licence pass. None of it blocks this
+prototype submission.
+
+In short: the assigned work is done, the app demonstrates the full
+platform brief end to end, everything is tested and documented, and the
+repository is ready for submission.
+
+ WHAT WE HAVE BUILT SO FAR
+
+Our project is called Glassnik. It is a small music app that shows how music
+can follow each Eye-POV Experience. You open it in your browser, and it plays
+music that fits the Experience you are watching or making - decided by the
+Experience's Category, Place and Location, and it keeps playing while you
+move through the videos inside that grouping.
+
+---------------------------------------------------------------
+THE APP ITSELF
+---------------------------------------------------------------
+
+- The app opens in the browser with four sections (tabs):
+
+  1. "Video & experiences" - here you upload your own video clips from
+     your computer. Your videos never leave your computer - nothing is
+     uploaded to any server.
+
+   2. "Sample experiences" - there are 15 ready-made example Experiences,
+     like a shopping walk through Kuala Lumpur, a beach day in Phu Quoc,
+     a cafe visit in Melbourne, and so on. This tab also has the "Explore
+     grouping" selector: pick one Category, Place or Location and every
+     Experience inside it shares ONE soundtrack - open a different
+     Experience and the music keeps playing; only switching the grouping
+     changes the music.
+
+  3. "Music credits" - the full song list (all 59 tracks), which track is
+     playing right now, and the honest licence status ("no usage rights
+     verified yet"). If any licence later asks for the artist to be
+     credited, this is the page that does it - never over the videos.
+
+  4. "Diagnostics" - a screen that shows the details: which songs are
+     loaded, whether every music file really exists on disk, and how many
+     unique files we have.
+
+- There is a music player bar that plays one song at a time for the whole
+  Experience. It shows NO track name and NO artist name (Glassnik is about
+  the videos, not music discovery). It has Play/Pause, Next track, the
+  music source menu - "Glassnik Music" / "Spotify - future integration"
+  (visible but greyed out) / "No Music" - and volume.
+
+- The app explains itself: every time it picks a song, it tells you WHY it
+  picked that song (for example, "this song belongs to the shopping
+  category, your Experience is shopping"). The names of the songs itself
+  are never shown over the videos - only on the Music credits tab.
+
+---------------------------------------------------------------
+HOW THE MUSIC PICKING WORKS
+---------------------------------------------------------------
+
+- When you upload videos, all clips in one Experience count as ONE music
+  context. Moving from clip 1 to clip 2 does NOT restart the music - the
+  same song keeps playing. The music only changes when you change the
+  Experience's setup.
+
+- The app does not choose music by guessing. It looks at the Experience's
+  category (like shopping, beaches, cafes) and plays a song from that
+  category's own collection. If the Experience also says a place type (like
+  "city centre" or "street market") AND has a category, the category wins -
+  so a shopping Experience always gets shopping songs even if its first
+  video is filmed in the city centre.
+
+- THE CITY-CENTRE FIX (kept working): one example Experience (Barcelona)
+  has a place type but no category. It first checks the place type and
+  plays the versatile "works anywhere" songs - 5 different ones, taking
+  turns - instead of one lonely fallback track.
+
+---------------------------------------------------------------
+THE COLLECTION OF SONGS
+---------------------------------------------------------------
+
+- THE CHANGE THIS SESSION: you added more recordings and renamed the whole
+  folder (the files are now called Songs0 to Songs54). The library grew
+  from 38 to 55 REAL songs. Every single audio file in the folder
+  `assets/audio-pool` (all 55 of them) is registered in the app. Nothing
+  was skipped or ignored.
+
+- WHERE THE NUMBERS COME FROM: the folder held 55 files, and four of them
+  are still exact byte-for-byte duplicates of four others (the same audio
+  under two names - the same four pairs as before, just renamed). So the
+  library keeps 51 full recordings and cuts 4 short real excerpts from the
+  duplicate recordings - one excerpt per duplicate file, so every file on
+  disk is used and all 55 songs in the app are different from each other.
+  Total music time is now about 103 minutes (shortest song 26 seconds,
+  longest about 3 minutes 31).
+
+- THE SORTING - YOUR OLD WISH, NOW COMPLETE: with 59 songs, EVERY one of
+  the 21 categories you can pick in the upload section has at least one
+  song of its own, and almost every one has two or more - no borrowing
+  anywhere:
+
+    shopping:     6 songs   (Kuala Lumpur shopping sequence + Tokyo)
+    markets:      3 songs   (Lisbon street market)
+    beaches:      3 songs   (Phu Quoc beach walk)
+    walking:      4 songs   (Paris historic street + no-place-type Experience)
+    cafes:        3 songs   (Melbourne cafe district)
+    waterfronts:  4 songs   (Auckland waterfront evening)
+    museums:      2 songs   (Kyoto museum afternoon - owes one to be back at 3)
+    parks:        3 songs   (Singapore park loop)
+    nightlife:    3 songs   (evening Experiences you upload)
+    dining:       3 songs   (dining Experiences you upload)
+    architecture: 3 songs   (buildings/landmarks Experiences you upload)
+    cycling:      2 songs   (cycle-route Experiences you upload)
+    hiking:       2 songs   (mountain-trail Experiences you upload)
+    road trips:   2 songs   (scenic-drive Experiences you upload)
+    nature:       2 songs   (countryside/coast Experiences you upload)
+    family:       2 songs   (children-ukulele + indie-rock recordings)
+    adventure:    1 song    (the trailer-intro recording)
+    festivals:    2 songs   (funky party + percussion recordings)
+    wellness:     2 songs   (smooth RnB + long-day recordings)
+    historic sites: 1 song  (the quiet cinematic recording, from museums)
+    rainy day:    1 song    (the quiet-courtyard lofi recording)
+    general:      5 songs   (works-anywhere pile)
+
+  Nothing is ever shared between two of these collections.
+
+  Total music time is now about 112.6 minutes (shortest song 26 seconds,
+  longest about 3 minutes 31). All 59 tracks and audio files:
+  production-approved under the pool-backed convention, licences still
+  unverified - the 59-row register holds every open question.
+
+- HONEST LIMIT: the upload list offers 21 category names in total, and on
+  28 October every one of them ended up with a song of its own (the full
+  story is below). The catches, in plain words:
+
+  1. The morning's four downloads were recordings the library ALREADY had
+     (byte-identical copies), so those four tracks moved out of shopping /
+     markets / beaches / cafes into family / adventure / festivals /
+     wellness instead of being copied in.
+  2. The afternoon's five downloads brought four genuinely new recordings
+     (rainy day lofi, family indie-rock, festivals percussion, wellness
+     long-day song) - and the fifth, the cinematic pick, was the SAME
+     recording as "Quiet Machines" living in museums. The duplicate copy
+     was removed and that recording moved from museums to historic_sites,
+     which completed the set.
+  3. That move leaves museums with 2 songs instead of its agreed 3-4
+     range: museums OWES one replacement song (first job in the sourcing
+     plan). Adventure still runs on a single song. The plan stays:
+     docs/library-expansion-plan.md.
+
+- Different example Experiences get different songs: the shopping
+  Experiences (Kuala Lumpur and Tokyo) start with "Velvet Skyline", the
+  beach Experience with "Paper Lanterns", the Paris walking Experience
+  with "Amber Avenue" - one favourite song per collection, 9 starting
+  songs across the 15 example Experiences.
+
+---------------------------------------------------------------
+THE REPEATING-SONG BUG - STAYS FIXED
+---------------------------------------------------------------
+
+- The fix from before still holds with the bigger library, and now there is
+  more room in every queue:
+
+  * The app remembers the last 15 songs it played and skips anything in
+    that memory while something else is available.
+  * When a category's own songs have ALL just played, the one played
+    longest ago goes next - the same song can never play twice in a row.
+
+- PROOF: the Kuala Lumpur shopping queue cycles through its whole shopping
+  collection before the first song comes back (7 songs at the time of the
+  original fix; since 28 October the collection is 6 because one song
+  moved to the festivals category - the rotation rule itself is unchanged
+  and the automated checks now expect 6). Fun detail: "City in Motion" is
+  still in the library - it now lives in the cycling collection, and the
+  shopping Experiences start on the louder "Velvet Skyline".
+
+---------------------------------------------------------------
+A CHECK YOU CAN RERUN YOURSELF
+---------------------------------------------------------------
+
+- The permanent "diagnostic" check scans the audio folder and prints the
+  exact count of real files found on disk (it finds all 55 and confirms the
+  app has all 55 registered, playable and switched on for both research and
+  production mode), then simulates each of the 15 example Experiences and
+  prints the #1 recommended song and its audio file for each. Run it with:
+  npx vitest run tests/recommendationDiagnostics.test.ts
+
+- Everything re-checked today (latest state):
+
+    * 114 automated unit tests (10 files, including the diagnostics
+      checks) - all pass
+    * 56 real-browser checks on the Chromium engine AND 56 on Safari's
+      own engine (WebKit) - a robot opens the app, uploads clips, plays
+      music, changes settings, browses the groupings - all pass on both
+    * The production build - passes
+    * A check of all 55 audio files (readable real MP3s, all different,
+      matches the song list) - passes
+
+---------------------------------------------------------------
+THE PLATFORM BRIEFING WE RECEIVED (26 October) - THE WHOLE MESSAGE IN PLAIN WORDS
+---------------------------------------------------------------
+
+- Our music update raised six questions from the team, and the team also
+  explained how the music must behave. That explanation is the heart of
+  the briefing, so it is written down here exactly, in easy words, and
+  each ask has its status beside it ("done" or "still open"). Our answer
+  to their first question ("is this what you built?") was: it is a
+  separate-looking small app, but the music rules inside it are exactly
+  the ones described - and by today the app shows them.
+
+THE RULE FOR HOW MUSIC MUST WORK (their main explanation)
+
+- Glassnik videos are NOT trips. Every video is one Eye-POV Experience
+  recorded with smart glasses: playing basketball, riding a bicycle,
+  cooking, walking through a market, shopping, visiting a museum, playing
+  golf, everyday life. Some Experiences are travel, many are not.
+- Music is chosen automatically from the Category, Place or Location the
+  viewer is exploring. Three examples, simplified:
+  1. LOCATIONS - inside Kuala Lumpur, the music keeps playing while the
+     viewer scrolls through different KL videos. Moving to Bangkok
+     changes the music to suit Bangkok.
+  2. CATEGORIES - choosing Sports keeps one fitting soundtrack through
+     all sports videos; switching to Shopping switches the soundtrack.
+  3. PLACES - inside one shopping mall, the music moves with the viewer
+     between every Experience there; picking a different mall changes it.
+- The rule in one sentence: music continues without stopping inside one
+  Category / Place / Location; it never restarts just because the next
+  video opens; it changes by itself when the grouping changes; nobody
+  has to pick a track by hand; and if a track finishes while the viewer
+  stays inside the grouping, the next suitable track starts alone.
+
+  Status: CONFIRMED, and now working in the app itself. ("Sample
+  experiences" tab -> "Explore grouping": one soundtrack per grouping,
+  no restarts inside it, one smooth change when it switches. Proven by
+  6 unit tests and 6 of the 56 automated browser checks.) The word
+  "trips" is gone from everything visitors see. >> What we built in
+  response is recorded further down in this file ("COVERING EVERY ASK
+  IN THE BRIEF, PART II" and "THE VIEWER CHANGES").
+
+THE SIX ASKS FROM THE MESSAGE
+
+1. MUSIC RIGHTS CHECKING - FIRST PRIORITY (their words: before adding
+   any new music). For every one of the 55 recordings, a person must
+   answer, from the real licence text, in plain terms:
+   - May it be used in a paid-for product?
+   - May Glassnik store and stream the audio on its website and apps?
+   - Is music allowed to keep playing in the background while videos
+     change (rather than being permanently glued into one video file)?
+   - Any rules against sharing, streaming or subscription (Premium)?
+   - Is the artist's name required anywhere?
+   - Can the audio get flagged by copyright-matching systems?
+   - Is any extra permission needed?
+   If the answer is unclear, mark the track as unusable rather than
+   guess. Keep every answer and every proof (page copies) in the
+   spreadsheet.
+
+   Status: PARTLY DONE - everything except the checking itself. The
+   spreadsheet exists (data/licence-review.csv, 55 rows x 30 columns,
+   every answer cell UNKNOWN). The Pixabay and Mixkit licence terms were
+   captured from their sites with dates (docs/licensing-and-sourcing.md),
+   and an evidence folder convention is agreed
+   (assets/licence-evidence/<track id>/). STILL OPEN: a person opening
+   the real pages for each track. Nothing may be guessed.
+
+2. NO MUSIC NAMES IN THE VIEWER + A CREDITS PAGE INSTEAD. Glassnik is
+   about the Experiences, not about music discovery. The little screen
+   space in the mobile viewer must stay clean - so no track names, no
+   artist names over the videos. Preferred music keeps things simple too:
+   paid-for-friendly, no visible naming needed, streamable as background,
+   few restrictions. Any required artist credit belongs on a separate
+   Music Credits page in the menu - a possible fix, NOT an automatic one;
+   each licence decides what is enough. Full records stay with the team
+   either way. Findings must be reported before any credits appear in a
+   viewer.
+
+   Status: DONE IN THE PROTOTYPE. The bar at the bottom shows only
+   status and controls - zero track/artist names, guaranteed by tests.
+   A fourth tab "Music credits" shows all 55 tracks, what plays now, and
+   an honest "nothing verified yet" note. STILL OPEN: the boss asked for
+   findings/recommendations BEFORE real credits work - that reply email
+   is the piece someone still needs to send.
+
+3. SPOTIFY IS FOR LATER - but design the music menu so it fits in later
+   with no redesign: Glassnik Music / Spotify (viewer's own music) /
+   No Music. Concentrate on Glassnik's own music now.
+
+   Status: DONE. The menu already looks like that: Glassnik Music and
+   No Music work; Spotify sits visible but greyed-out with the words
+   "future integration". Details of why Spotify is not usable yet are in
+   docs/spotify-feasibility.md.
+
+4. MORE MUSIC LATER - after the rights checks, work towards about 100
+   verified tracks over all 21 categories, and first give music of its
+   own to the 6 categories that share the general pile. Prefer variety,
+   avoid repetitive or stereotype picks; quality and rights beat count.
+
+   Status: PLANNED, NOT STARTED ON PURPOSE. The brief itself says
+   "after licence verification", so sourcing waits. The plan is written
+   (docs/library-expansion-plan.md): which empty categories first, how
+   many tracks, quality rules per category (no cultural clichés), and a
+   check-in pipeline per track. STILL OPEN: the rights checking (#1).
+
+5. ONE SYSTEM FOR ALL THREE PLATFORMS - website, Android app, iPhone
+   app. Same behaviour everywhere: continuous music inside a grouping,
+   automatic change on switching, controls to mute/pause/adjust volume,
+   smooth transitions, no restarts per new video. As a question we must
+   answer: which platforms are actually tested, is Android/iPhone
+   supported, what extra work do the apps need. Finish the remaining
+   testing, including Safari and real phones. One shared music brain,
+   platform-specific sound handling only where needed.
+
+   Status: PARTLY DONE. Same brain confirmed by design: the music rules
+   are plain TypeScript with no screen and no sound code, so all three
+   platforms can run the identical engine. Tested today: the web app -
+   the automated battery passes 56/56 on the Chromium engine and 56/56 on
+   SAFARI'S OWN ENGINE (WebKit). STILL OPEN, honestly named in
+   docs/platform-compatibility.md: clicking through the real Safari app
+   by hand, real Android/iPhone phones, and inside-the-app testing; plus
+   the phone-specific extras (iPhone: background audio + lock-screen
+   controls; Android: media session + pause on phone calls). The app
+   teams have a concrete checklist.
+
+6. HOW THIS PLUGS INTO THE REAL GLASSNIK (their integration questions,
+   plainly): does it use the real video data or uploaded "trip" files?
+   can it notice Category / Place / Location switches? keep music within
+   a grouping? pick new music on switching? sit inside the existing
+   viewer rather than being a separate app? what work is left? can the
+   website, Android and iPhone share it? They also said app stores come
+   first (Play Store, then Apple), the teams finish before one combined
+   review by the CTO, and if the music is not ready for launch it can
+   join in a later update.
+
+   Status: ANSWERED IN WRITING, AND THE KEY RULE IS NOW CODE. The music
+   piece is a small standalone prototype today, but the rules engine is
+   a plain, reusable module; it takes category / place type / location
+   straight from video data, notices every switch, holds one soundtrack
+   per grouping and changes only on switching - all of this now proven
+   in the app, not only described. What the real product must supply and
+   build is listed step by step in docs/integration-guide.md; direct
+   answers to each of their bullet questions are at its end. Nothing in
+   the plan demands shipping unverified music or delaying the app
+   releases.
+
+- One wording rule for all future work (their message): Glassnik has no
+  "trips". Videos are Eye-POV Experiences; the filters are Categories,
+  Places and Locations. The engine already thought in those three
+  inputs - only visitor-facing words changed ("Video & experiences",
+  "Clips in this Experience" and so on). Inside the code a few technical
+  names still say "trip" on purpose - renaming them would churn dozens
+  of tests without changing anything a viewer sees.
+
+---------------------------------------------------------------
+COVERING EVERY ASK IN THE BRIEF, PART II (26 October, later today)
+---------------------------------------------------------------
+
+- THE CENTRAL MUSIC RULE IS NOW BUILT INTO THE PROTOTYPE, NOT JUST DESCRIBED.
+  The new "Explore by Category, Place or Location" selector (Sample
+  experiences tab) makes one soundtrack belong to a whole grouping:
+
+  - With "All Shopping Experiences" chosen, the list shows the 6 shopping
+    Experiences (Kuala Lumpur's five and Tokyo's) and opening any one of
+    them keeps the same music playing - the brief's "continuous as you
+    scroll through different videos within that grouping". The automated
+    checks prove none of these switches re-assigns the audio source.
+  - Switching the grouping (say to "All Experiences in Lisbon") is the only
+    thing that changes the music - one seamless transition to that
+    grouping's soundtrack, no restarts.
+  - The decision stays deterministic: a grouping is represented by its
+    first Experience in catalogue order, so the same grouping always starts
+    the same music.
+  - This rides on three new engine functions (groupingContextKey,
+    groupingMembers, resolveGroupingContextSource) - pure code the real
+    Glassnik integration reuses by passing "the browse filter the viewer is
+    currently inside".
+
+- THE SAFARI ENGINE ("WEBKIT") BATTERY IS AUTOMATED NOW. The 56-check
+  browser battery runs on Chromium by default and on Safari's engine with
+  BROWSER=webkit - the same checks, so "works in Safari" now has evidence
+  rather than hope: 56/56 on Chromium AND 56/56 on WebKit 27.2 (current
+  Safari engine), covering the two things iOS gets wrong most: audio may
+  only start from a user gesture (ours is gesture-gated by design) and
+  context changes must not restart the track (verified). UPDATE 28 Oct:
+  the whole Safari manual checklist is now confirmed by eye in the real
+  Safari app - no sound before pressing Play, the next song starting on
+  its own when one finishes, and the Kuala Lumpur shopping sequence
+  cycling all 7 shopping songs (song names read on the Music credits
+  tab, never in the viewer). Still unverified: real Android/iPhone
+  devices - that is
+  written down in docs/platform-compatibility.md, including the exact
+  native work the app teams must add (iOS background audio + lock screen,
+  Android media session + interruption handling).
+
+- LICENCE TERMS OF BOTH NAMED SOURCES ARE CAPTURED AND DATED IN THE DOCS.
+  From the live pages: Pixabay's Content License Summary (free use, no
+  attribution, but a standalone-distribution prohibition) and Mixkit's
+  Stock Music Free License (commercial use, web/social/streaming
+  permitted; no CDs/DVDs/video games/broadcast; no music-only remixes; no
+  rights-service registration). These sit in
+  docs/licensing-and-sourcing.md as date-stamped source guidance - they
+  narrow where the human look changes, but no track row is "verified" by
+  them; all 55 rows stay UNKNOWN in data/licence-review.csv, and the
+  evidence convention (assets/licence-evidence/<track_id>/ with the item
+  page, licence page and a record) means the human step is mechanical, not
+  investigative from zero.
+
+- THE ARCHITECTURE QUESTIONS FROM THE BRIEF HAVE A DOCUMENT: the engine's
+  pure functions, the exact metadata shape Glassnik videos need
+  (category id / place type / destination / music_context), the grouping
+  wiring, and a checklist of what the real integration adds
+  (docs/integration-guide.md). The library-growth plan for ~100 verified
+  tracks - starting with the six empty categories, gated on licence
+  clearance exactly as the brief orders - lives in
+  docs/library-expansion-plan.md.
+
+- Small honest fixes along the way: the stale "Browse all 100 tracks"
+  label now shows the real count (55), and the sample-experiences tab
+  test asserts the grouping selector exists.
+
+- Running totals after this pass: 114 unit tests (10 files) and 56 browser
+  checks per engine, all passing. The remaining work is human work and
+  native-app work, not engine work.
+
+---------------------------------------------------------------
+THE VIEWER CHANGES FOR THE NEW BRIEF (26 October, done today)
+---------------------------------------------------------------
+- We decided to make the interface-side changes from the briefing now
+  (the licence checking itself still needs a person). This is what
+  changed in what a viewer sees:
+
+  1. NO TRACK OR ARTIST NAMES IN THE VIEWER BAR. The bar at the bottom
+     now shows only the music status and controls (Play, Next track,
+     music source, volume). The names of songs never appear over the
+     videos any more. Track details moved to the Music credits page.
+  2. NEW MUSIC CREDITS TAB. A fourth tab lists all 55 tracks with their
+     titles, artists, where the audio came from and an honest licence
+     status ("no usage rights verified yet"). It also shows what is
+     playing right now. If any licence later requires attribution, this
+     page is where it will be given - the viewer stays clean.
+  3. THE MUSIC MENU HAS THE PLANNED THREE OPTIONS. The bar's music
+     source menu is now Glassnik Music / Spotify - future integration
+     (greyed out, not usable yet) / No Music. Choosing No Music pauses
+     the music; Glassnik Music brings it back. This is shaped so the
+     future Spotify integration only needs its behaviour added, not a
+     redesign.
+  4. THE WORD "TRIP" LEFT THE INTERFACE. Tabs and buttons now say
+     "Experiences" (Video & experiences, Clips in this Experience,
+     Music context for this Experience, and so on). Internal technical
+     names in the code were left alone on purpose - renaming them would
+     churn dozens of tests without changing anything a viewer sees.
+  5. HEADER UPDATED. The tagline now says the music follows
+     Categories, Places and Locations, and the badge honestly says
+     "music rights unverified" instead of the old "synthetic data"
+     (the audio is real; the rights are what is unverified).
+
+- Why no names in the viewer matters to the tests: the automated
+  browser checks now include "Viewer bar shows no track names" and
+  "Viewer bar still shows no track names", and they check the credits
+  page lists all 55 tracks. Browser checks went from 42 to 49 and all
+  pass. The unit suite went from 106 to 108 tests, all pass
+  (two new interface tests: the credits tab contract and the
+  no-names-with-No-Music check).
+
+- What is still open from the briefing: everything needing a person -
+  the licence verification of all 55 recordings (the spreadsheet is
+  ready), real-device checks (the Safari manual checklist is now fully
+  confirmed - see the Safari section below), real Glassnik metadata
+  integration, and music for the two categories that still have none
+  (historic sites and rainy day - 28 October covered the other four of
+  the six rarest).
+
+---------------------------------------------------------------
+SEEN WITH OUR OWN EYES (26 October, end of day)
+---------------------------------------------------------------
+
+- The prototype was opened in a live browser for a hands-on look
+  (http://localhost:5173/, the dev server stays running) and every
+  headline from these two days is visible on screen:
+
+  1. The player bar shows no track or artist names - only Play, Next
+     track, the music source menu (Glassnik Music / Spotify - future
+     integration, greyed out / No Music) and volume.
+  2. "Video & experiences" tab: press Play first (browsers only allow
+     sound after a click), then upload two clips or use Next clip to
+     watch the music continue without restarting.
+  3. "Sample experiences" tab - the important new piece: the "Explore
+     grouping" selector. Choosing "All Shopping Experiences" lists the
+     six shopping Experiences (five Kuala Lumpur + Tokyo); clicking
+     between them keeps the same music playing with no restart. Only
+     switching the grouping ("All Experiences in Lisbon" etc.) changes
+     the soundtrack, with one smooth transition. This is the briefing's
+     central rule working in the interface, not just in tests.
+  4. "Music credits" tab: all 55 tracks, what is playing now, and the
+     honest "no usage rights verified yet" status.
+  5. "Diagnostics" tab: the engine internals, for whoever wants detail.
+
+- Browsers need the first click before music can start; that is browser
+  policy, not a bug, and it is the same thing the automated tests prove
+  (gesture-gated start).
+
+---------------------------------------------------------------
+WHAT IS LEFT (TICKED-UP STATE, END OF 28 OCTOBER)
+---------------------------------------------------------------
+
+DONE - TICKED OFF:
+
+- [x] Give the six rarest categories (historic sites, festivals,
+  wellness, adventure, family, rainy day) songs of their own.
+  DONE - ALL SIX, 28 October. Family, adventure, festivals and wellness
+  got their songs via the morning's transfers (recordings were already
+  in the library), and the afternoon's downloads finished the job: rainy
+  day got the quiet-courtyard lofi recording, and historic sites got the
+  quiet cinematic recording by moving it out of museums (it was a
+  re-download of a museum track). Honest note: museums dropped to 2
+  songs and owes a replacement; adventure still runs on 1 song. See the
+  HONEST LIMIT section above and the dated entry at the end.
+
+- [x] The whole Safari manual checklist (3/3 confirmed by eye in the
+  real Safari app, 28 October: no sound before Play, next song starts
+  automatically, KL shopping rotation). On top of the automated battery
+  passing 56/56 on Safari's own engine.
+
+- [x] Every one of the 21 upload categories owns its own disjoint music
+  pool (59 real tracks, all unique audio; the build now pins pools by
+  checksum, refuses wrong sizes, and can never repeat a title).
+
+- [x] The viewer-UI rules from the boss's platform brief: no track or
+  artist names over the videos, a separate Music credits page, the
+  3-option music menu, "Experience" wording everywhere, and the
+  "music rights unverified" honesty badge (that badge stays until the
+  register below is cleared).
+
+- [x] Music continuity by grouping: music keeps playing through
+  Category / Place / Location switches and changes when you leave the
+  grouping (implemented, tested, demonstrated).
+
+- [x] Platform batteries: 114/114 unit tests, 56/56 real-browser checks
+  on BOTH the Chromium engine and Safari's own WebKit engine.
+
+- [x] Licence groundwork, fully prepared: the 59-row register
+  (data/licence-review.csv), the captured and dated Pixabay/Mixkit
+  licence terms (docs/licensing-and-sourcing.md), the evidence folder
+  convention (assets/licence-evidence/), a step-by-step verification
+  workflow, and a Gemini-assisted search list
+  (data/copyleft-search-batch.txt) to find candidate pages for the
+  untraced recordings.
+
+STILL OPEN - NOT TICKED:
+
+- [ ] A person checks the usage rights (licences) of all 59 recordings
+  and fills in the register. Nothing here may be guessed. Fastest
+  start: the 9 rows whose Pixabay pages are already in the team's
+  browser history (listed in the verification workflow), then the
+  untraced recordings with the Gemini search list. When rows are
+  verified by hand, the verdicts get synced into the catalogue and the
+  honesty badge can come off.
+
+- [ ] Replace the placeholder titles and artist names with the real
+  song information once the sources are confirmed (same human pass as
+  the licence check).
+
+- [ ] Sourcing debts: 1 replacement song for the museums collection
+  (it sits at 2 of the agreed 3-4 range), 1 more song for adventure,
+  then growing the smallest pools (cycling, hiking, road trips, nature
+  at 2 each) - the plan is docs/library-expansion-plan.md.
+
+- [ ] Real-device checks: Android and iPhone app containers (the
+  Safari/desktop side is done; nothing mobile has run in a real app
+  container yet).
+
+- [ ] Real Glassnik metadata integration (titles/artists from the real
+  system when it exists).
+
+---------------------------------------------------------------
+WHAT HAPPENED WITH THE FOUR DOWNLOADED SONGS (28 October)
+---------------------------------------------------------------
+
+- Four songs were downloaded for the six rarest categories: a children
+  ukulele tune (for family), a trailer intro (for adventure), a funky
+  party track (for festivals) and a smooth RnB tune (for wellness).
+
+- The surprise: when the build checked them against the library, all four
+  turned out to be recordings the library ALREADY had - byte-for-byte
+  the same files as four pool tracks under different names
+  (Ferris Wheels in cafes, Soft Machine in beaches, Marble Floor in
+  shopping, Paper Boats in markets). The four downloads were the same
+  Pixabay songs again.
+
+- No cheating, no duplication: owning the same recording in two
+  collections would break the "no song is ever shared" rule, so instead
+  of copying the downloads in, the four EXISTING tracks moved into the
+  four categories that had no music of their own. Each losing collection
+  (shopping 7 -> 6, markets/beaches/cafes 4 -> 3) stays inside the size
+  range the plan allows.
+
+- What you will notice: family, adventure, festivals and wellness
+  Experiences now each play their own song. Shopping Experiences rotate
+  through 6 songs now instead of 7 (the rotation mechanics you confirmed
+  in Safari work exactly the same). Nothing else moved.
+
+- All the usual checks re-ran clean after the move: the 114 unit tests
+  (including the pool-plan test with the new sizes and the KL rotation
+  check that now expects 6), the audio verifier (55 readable MP3s, all
+  different, catalogue agrees), the production build, and the full
+  56-check browser battery on BOTH engines - Chromium and Safari's own
+  WebKit engine. The licence register stays at 55 rows, every cell still
+  awaiting a human check.
+
+- One extra tidy-up from the same afternoon: the placeholder song names
+  had 17 doubles (two different tracks presenting the same made-up
+  title, an old build's mistake). Those 17 got their own names now, so
+  when a person reads the Music credits list every row is a different
+  name; the build can never hand out the same title twice again.
+
+---------------------------------------------------------------
+THE FIVE SONGS OF THE AFTERNOON (28 October, later)
+---------------------------------------------------------------
+
+- Five more songs were downloaded and dropped straight into the audio
+  pool folder: a quiet-courtyard lofi tune, a cinematic track, an
+  "africa" percussion tune, an upbeat indie-rock tune, and a long-day
+  mellow tune.
+
+- The build's duplicate check did its job before anything shipped: the
+  cinematic track turned out to be byte-identical to "Quiet Machines" -
+  a recording that was already in the library (in the museums
+  collection, with a small excerpt-sibling in the cycling collection).
+  Same recorded music, different Pixabay page name. It was removed from
+  the pool rather than copied twice.
+
+- Because a recording may only live in ONE collection, that museum song
+  itself moved to the historic sites collection - so the exact song the
+  team picked for historic sites still ended up where they wanted it.
+  Result: every one of the 21 categories now owns its own music.
+
+- The four genuinely new recordings were wired in by name:
+  rainy day <- quiet-courtyard lofi, family <- indie-rock, festivals <-
+  percussion, wellness <- long-day. Those three grew to 2 songs each;
+  adventure remains a single song pool.
+
+- Everything re-checked clean after the change: 114 unit tests (with the
+  new pool plan: museums 2, family 2, festivals 2, wellness 2, historic
+  sites 1, rainy day 1), audio verifier (59 readable MP3s, all
+  different, about 112.6 minutes total), production build, and the full
+  56-check browser battery on Chromium AND Safari's engine. The licence
+  register is now 59 rows - all still waiting for a human.
+
+- Owed after the day: one replacement song for the museums collection
+  (2 of the agreed 3-4 range now), and one more for adventure when
+  convenient. Written into the sourcing plan.
+
+---------------------------------------------------------------
+28 OCTOBER (EVENING) - PIXABAY LICENCE TERMS RE-CHECKED (FAQ + FULL TERMS)
+---------------------------------------------------------------
+
+- The Pixabay licence pages were read again today and the exact wording
+  is now saved (and dated) in docs/licensing-and-sourcing.md:
+
+    * Certificates: Pixabay's FAQ says "License certificates are
+      available for tracks registered with YouTube's Content ID. For
+      other tracks, users should keep the download link, file name, and
+      the Pixabay Content License summary as proof of permitted use."
+      So a certificate is NOT given with every download - it only
+      exists for Content ID tracks. For everyone else, Pixabay's own
+      proof recipe is exactly our evidence folder: item page + licence
+      page + download record.
+
+    * The shield icon: on a Pixabay track page, a shield icon marks a
+      track registered with Content ID (the thing that causes YouTube
+      claims). The verifier now looks for it on every track page and
+      records it in the register's content-id column. If it is there,
+      download the certificate PDF from the page and keep it.
+
+    * Subscription use: the FAQ allows Pixabay music inside content
+      published on subscription platforms "provided the music is
+      embedded as part of a creative project and not distributed
+      separately or claimed as your own". That is how Glassnik works:
+      music only plays under an active Experience, there is no
+      standalone music player, and users cannot download files.
+
+    * The kill-switch duty: Pixabay's full Terms (updated by Pixabay on
+      20 October 2026) say that if a claim about a track turns up -
+      even only a threatened or potential one - you must STOP using it
+      immediately, delete it from your systems, and email
+      info@pixabay.com. Glassnik's per-track takedown (one catalogue
+      row plus a rebuild removes one song without touching the other
+      58) exists for exactly this duty.
+
+- What changed for the register: the reviewer now also records whether
+  the shield icon was on the track page, and keeps certificate.pdf in
+  the evidence folder when it is. The 59-row register itself is
+  unchanged and still waits for the human pass. The pool table in
+  docs/licensing-and-sourcing.md was also refreshed to match the
+  catalogue after today's transfers (museums 2, family 2, festivals 2,
+  wellness 2, historic sites 1, rainy day 1, adventure 1).
+
+---------------------------------------------------------------
+28 OCTOBER (NIGHT) - EVERY RECORDING'S PIXABAY IDENTITY RECOVERED
+---------------------------------------------------------------
+
+- Important clarification: the downloads were made WITHOUT a Pixabay
+  account. That is fine - Pixabay allows downloading without one, the
+  licence applies either way, and Pixabay's own proof recipe ("keep the
+  download link, file name, and the Pixabay Content License summary",
+  from the FAQ captured today) does not need an account. What we do not
+  have is an account download-history page - the stamps below replace it.
+
+- Big discovery, found while checking what evidence we actually have:
+  macOS writes a "downloaded from" stamp on every file a browser saves.
+  Every one of the 59 pool recordings carries its exact Pixabay CDN
+  download URL (the item ID is inside it) plus the download date and
+  time. The 55 numbered recordings also carry the original Pixabay
+  download filename (creator - title - item ID). The MP3s themselves
+  contain no ID3 tags - the stamp is the identity carrier.
+
+- All of it is now captured in writing (stamps can be stripped by
+  copying/zip): data/download-stamps.json (machine) and
+  assets/licence-evidence/download-stamps.md (human-readable, one table
+  row per recording). Examples: Songs0 = aberrantrealities "organic flow"
+  item 485950, Songs1 = alexgrohl "energetic action sport" 500409,
+  Songs31 = ikoliks "uplifting action sport" 619094.
+
+- What this changes for verification: the hard part (finding 50 unknown
+  recordings by duration) is gone. Every row now has a real creator,
+  title and item ID. data/copyleft-search-batch.txt was rewritten: it is
+  no longer a Gemini search list, it is the open-and-confirm list - one
+  row per untraced recording with its item page URL to open. A row still
+  only gets ticked after a human opens the page, listens, and saves the
+  evidence - the stamps identify the candidate, they do not verify it.
+
+- Also found in the Downloads folder: an INTERRUPTED download from this
+  morning - kornevmusic-epic-emotional-adventure-624808 (only 1 MB of it
+  arrived). That is an adventure song; the adventure collection currently
+  has only 1 song. Re-downloading it would fill that gap. NOTE: do not
+  empty the Downloads folder - the original files (with their stamps) are
+  part of the evidence until every register row is verified.
+
+---------------------------------------------------------------
+28 OCTOBER (NIGHT, PART 2) - REGISTER LINKS FIXED (404s EXPLAINED)
+---------------------------------------------------------------
+
+- The user opened the register and found the item links go 404. Cause:
+  those links were the OLD invented guesses (made-up page names and IDs)
+  from before the download stamps were discovered. Not a problem with
+  the recordings - only with the guessed links.
+
+- Fix: the register's link column (source_url_candidate) now holds the
+  real item page built from each file's stamp (the item ID is the
+  reliable part; Pixabay may name the page slightly differently). 55
+  guessed links replaced with real ones; the 4 hand-downloads already
+  had real links. Pattern proven live on 3 sample pages - each opened
+  fine and the page durations matched the register exactly (2:12 and
+  1:46). If a link still 404s: copy the item ID from the row and search
+  it on pixabay.com (tip added to the batch file).
+
+- The 3 sampled pages all showed the words "Content ID Registered"
+  (Organic Flow, Energetic Action Sport, Uplifting Action Sport) - so
+  Content ID tracks are common, the shield/certificate will appear on
+  many pages, and AlexGrohl's own profile note says claims from his
+  Content ID tracks are routine and releasable. The human still confirms
+  the shield per page during verification.
+
+- IMPORTANT housekeeping: from now on data/licence-review.csv is the
+  MASTER document (the human fills it). Do not re-run
+  "npm run licence:csv" before the final sync step - regenerating would
+  erase every human-entered answer. The catalogue's own guessed links
+  get corrected during that final sync, not now.
+
+---------------------------------------------------------------
+28 OCTOBER (NIGHT, PART 3) - TEAM DECISION: LICENCE CHECKING DEFERRED
+---------------------------------------------------------------
+
+- Team decision, 28 October: the row-by-row licence checking (filling
+  all 59 register rows by hand) is DEFERRED for the prototype phase.
+  The team judges it not necessary right now, and will pick it up if
+  the situation changes. This is a scoping decision, not a completion:
+  the register stays 0 of 59 verified, the "music rights unverified"
+  badge stays in the app, and nothing anywhere claims the music is
+  verified.
+
+- What is already in place, at zero extra cost (so stopping now loses
+  nothing):
+    * The real identity of every recording (creator, title, item ID,
+      download URL, date) is saved in data/download-stamps.json and
+      assets/licence-evidence/download-stamps.md.
+    * The Pixabay FAQ + full terms are captured and dated in
+      docs/licensing-and-sourcing.md, including the certificate rule
+      (certificates only for Content ID tracks) and the immediate
+      stop-and-remove duty on any claim.
+    * The register (data/licence-review.csv) now holds REAL item page
+      links for all 59 rows, so the checking can start any day in the
+      10-minutes-per-row routine. The 9 hand-known rows remain the
+      fast start.
+    * The app design already follows the licence's safety rules: music
+      only plays under an active Experience, no standalone music
+      player, no downloads, and any single track can be pulled with
+      one catalogue row plus a rebuild (the kill-switch).
+
+- What re-opens this work (the "unless and until" list):
+    1. A claim or takedown arrives ("the music stops playing" case):
+       Pixabay's terms require stopping the track IMMEDIATELY - same
+       day - pulling it via the kill-switch and replacing it.
+    2. The prototype becomes a real product (app stores, paying
+       users, marketing): the register must be fully cleared before
+       that launch.
+    3. The boss asks for the rights evidence pack: everything above
+       is ready to show, and the register is the only missing piece.
+
+- If anyone asks about the music rights, the honest one-liner is:
+  "All 59 recordings are identified with real Pixabay sources and
+  download evidence; the formal per-track licence pass is deferred
+  while this is a research prototype and will be completed before any
+  real launch."
