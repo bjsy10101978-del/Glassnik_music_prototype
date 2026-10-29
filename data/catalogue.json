@@ -1,0 +1,2416 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_status": "pool_recordings_pending_source_verification",
+  "counts": {
+    "total": 59,
+    "category_matched": 54,
+    "place_type_matched": 0,
+    "general_purpose": 5,
+    "playable": 59
+  },
+  "important_notice": "The 59 records hold real local music: 55 are byte-identical copies of local pool recordings and 4 are locally cut, re-encoded excerpts of the byte-duplicate recordings on disk. source_url holds a candidate Pixabay Music track page URL that has NOT been opened or verified by a human. Treat it as unverified. checksum and duration_seconds are measured from the local files listed in data/audio-library.json. Never treat any of this as licensed audio or a Content ID clearance.",
+  "track_schema": {
+    "track_id": "string, unique stable identifier",
+    "title": "string",
+    "artist": "string",
+    "source_url": "string|null; verified individual Pixabay track page URL only",
+    "file_reference": "string|null; path relative to public/",
+    "checksum": "string|null; SHA-256 of locally held file after manual download",
+    "duration_seconds": "number|null; verify from actual file",
+    "genres": "string[]",
+    "moods": "string[]",
+    "vocals": "unknown|instrumental|vocal|mixed",
+    "energy": "number from 0.0 to 1.0",
+    "bpm": "integer|null",
+    "categories": "category_id[]",
+    "place_types": "place_type[]",
+    "destinations": "string[]",
+    "provenance": "object",
+    "licence_source": "string|null",
+    "content_id_flag": "unverified|clear|potential_match|matched|not_applicable",
+    "review_status": "pending_source_verification|metadata_reviewed|licence_reviewed|rejected",
+    "approved_for_production": "boolean; false must remain the safe default until review",
+    "source_url_status": "candidate_unverified|candidate_verified|not_applicable; the status of the source_url field",
+    "source_search_url": "string; working Pixabay Music search URL a reviewer can use to find the real track"
+  },
+  "tracks": [
+    {
+      "track_id": "glassnik-001",
+      "title": "Amber Avenue",
+      "artist": "Alder Dovetail",
+      "source_url": "https://pixabay.com/music/amber-avenue-212648/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/pop/",
+      "file_reference": "audio/track-1.mp3",
+      "checksum": "4fae540055bd980aa1e5316fb72bc3c7c57c45b4c8ab767f9439d6a24d6344ca",
+      "duration_seconds": 131.709,
+      "genres": [
+        "pop",
+        "percussion"
+      ],
+      "moods": [
+        "uplifting",
+        "tranquil"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.556,
+      "bpm": 77,
+      "categories": [
+        "walking"
+      ],
+      "place_types": [
+        "historic_street",
+        "heritage_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs0.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-002",
+      "title": "Paper Lanterns",
+      "artist": "Bramble Kirkwall",
+      "source_url": "https://pixabay.com/music/paper-lanterns-220567/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/tropical/",
+      "file_reference": "audio/track-2.mp3",
+      "checksum": "37ae1b891a3c647e84d289694855005595b437d54bea42c7aaf7f0e66e674b61",
+      "duration_seconds": 106.24,
+      "genres": [
+        "tropical",
+        "lo-fi"
+      ],
+      "moods": [
+        "playful",
+        "serene"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.6,
+      "bpm": 84,
+      "categories": [
+        "beaches"
+      ],
+      "place_types": [
+        "island_beach",
+        "resort_area"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs1.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-003",
+      "title": "Windowlight",
+      "artist": "Cedar Ravenswood",
+      "source_url": "https://pixabay.com/music/windowlight-228486/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/trip-hop/",
+      "file_reference": "audio/track-3.mp3",
+      "checksum": "fa5976d80d67c1dc0e2991b787243e558368b700aa138599c09cfa966703e8f7",
+      "duration_seconds": 128.261,
+      "genres": [
+        "trip hop",
+        "drum and bass"
+      ],
+      "moods": [
+        "lively",
+        "sparse"
+      ],
+      "vocals": "mixed",
+      "energy": 0.661,
+      "bpm": 91,
+      "categories": [
+        "markets"
+      ],
+      "place_types": [
+        "street_market",
+        "night_market"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs2.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-004",
+      "title": "City in Motion",
+      "artist": "Dune Zephyrine",
+      "source_url": "https://pixabay.com/music/city-in-motion-236405/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/drum-and-bass/",
+      "file_reference": "audio/track-4.mp3",
+      "checksum": "d813fd4200649c982adaac95c02fb131e757b244d12979786ebb7c3fb251bf0c",
+      "duration_seconds": 98.116,
+      "genres": [
+        "drum and bass",
+        "orchestral"
+      ],
+      "moods": [
+        "energetic",
+        "driving"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.604,
+      "bpm": 98,
+      "categories": [
+        "cycling"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs3.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-005",
+      "title": "Quiet Corners",
+      "artist": "Ember Greyloch",
+      "source_url": "https://pixabay.com/music/quiet-corners-244324/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-5.mp3",
+      "checksum": "448abcddde27d8e406a0063c58e17e701896020d617c09f6da93d770308f5c40",
+      "duration_seconds": 101.825,
+      "genres": [
+        "ambient"
+      ],
+      "moods": [
+        "serene",
+        "energetic"
+      ],
+      "vocals": "vocal",
+      "energy": 0.409,
+      "bpm": 105,
+      "categories": [
+        "waterfronts"
+      ],
+      "place_types": [
+        "waterfront_promenade"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs4.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-006",
+      "title": "Velvet Skyline",
+      "artist": "Fable Nightingale",
+      "source_url": "https://pixabay.com/music/velvet-skyline-252243/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/house/",
+      "file_reference": "audio/track-6.mp3",
+      "checksum": "195755d8182b8d65871a661743fc75fce84adcfad11337df84691270f094c51b",
+      "duration_seconds": 118.831,
+      "genres": [
+        "house",
+        "synthwave"
+      ],
+      "moods": [
+        "upbeat",
+        "jazzy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.778,
+      "bpm": 112,
+      "categories": [
+        "shopping"
+      ],
+      "place_types": [
+        "shopping_mall"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs5.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-007",
+      "title": "Market Morning",
+      "artist": "Grove Vantablack",
+      "source_url": "https://pixabay.com/music/market-morning-260162/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/house/",
+      "file_reference": "audio/track-7.mp3",
+      "checksum": "c3bf14af83050325ba7f29f471b64bd1e69910d549f77f94de04bf037eeb6903",
+      "duration_seconds": 142.106,
+      "genres": [
+        "house",
+        "chillhop"
+      ],
+      "moods": [
+        "upbeat",
+        "romantic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.888,
+      "bpm": 119,
+      "categories": [
+        "shopping"
+      ],
+      "place_types": [
+        "shopping_mall"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs6.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-008",
+      "title": "Blue Hour Walk",
+      "artist": "Harbor Everleigh",
+      "source_url": "https://pixabay.com/music/blue-hour-walk-268081/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/indie/",
+      "file_reference": "audio/track-8.mp3",
+      "checksum": "68aad2d684c212554e3a45340c143f2baba664b029da0db050cb6d2782beb424",
+      "duration_seconds": 211.435,
+      "genres": [
+        "indie",
+        "jazz-hop"
+      ],
+      "moods": [
+        "wistful",
+        "cosmic"
+      ],
+      "vocals": "mixed",
+      "energy": 0.15,
+      "bpm": 126,
+      "categories": [],
+      "place_types": [
+        "city_centre",
+        "transport_hub"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs7.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-009",
+      "title": "Coastal Postcard",
+      "artist": "Indigo Greenway",
+      "source_url": "https://pixabay.com/music/coastal-postcard-276000/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/house/",
+      "file_reference": "audio/track-9.mp3",
+      "checksum": "896a95670f2e756d9e8a8a46971f7972dccf9081cfafcfdfab49737258e3b0dc",
+      "duration_seconds": 166.975,
+      "genres": [
+        "house",
+        "indie electronic"
+      ],
+      "moods": [
+        "upbeat",
+        "hopeful"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.772,
+      "bpm": 133,
+      "categories": [
+        "shopping"
+      ],
+      "place_types": [
+        "shopping_mall"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs8.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-010",
+      "title": "Soft Focus",
+      "artist": "Juniper Northrop",
+      "source_url": "https://pixabay.com/music/soft-focus-283919/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/indie/",
+      "file_reference": "audio/track-10.mp3",
+      "checksum": "cb40877c9164d1dad068bdc7ffe4c609b9482d8c69667d52cfa84f035153c601",
+      "duration_seconds": 120.033,
+      "genres": [
+        "indie",
+        "neoclassical"
+      ],
+      "moods": [
+        "wistful",
+        "tender"
+      ],
+      "vocals": "vocal",
+      "energy": 0.569,
+      "bpm": 140,
+      "categories": [],
+      "place_types": [
+        "city_centre",
+        "transport_hub"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs9.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-011",
+      "title": "Open Roads",
+      "artist": "Kestrel Underhill",
+      "source_url": "https://pixabay.com/music/open-roads-291838/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/neoclassical/",
+      "file_reference": "audio/track-11.mp3",
+      "checksum": "a77e1a658bfe07382e0304ba5c67afda0e54ddb48943eeb69846f5e3bde08021",
+      "duration_seconds": 122.044,
+      "genres": [
+        "neoclassical",
+        "minimal electronic"
+      ],
+      "moods": [
+        "reflective",
+        "mystical"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.329,
+      "bpm": 147,
+      "categories": [
+        "architecture"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs10.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-012",
+      "title": "Museum Steps",
+      "artist": "Lantern Cloudberry",
+      "source_url": "https://pixabay.com/music/museum-steps-299757/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/house/",
+      "file_reference": "audio/track-12.mp3",
+      "checksum": "01f2199f618c5addaa6ea730765dc6db011d67281cb96e2c9d0120ac0bca10cf",
+      "duration_seconds": 134.661,
+      "genres": [
+        "house",
+        "tropical"
+      ],
+      "moods": [
+        "upbeat",
+        "festive"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.797,
+      "bpm": 73,
+      "categories": [
+        "shopping"
+      ],
+      "place_types": [
+        "shopping_mall"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs11.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-013",
+      "title": "Garden After Rain",
+      "artist": "Meadow Jasperly",
+      "source_url": "https://pixabay.com/music/garden-after-rain-307676/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/soft-rock/",
+      "file_reference": "audio/track-13.mp3",
+      "checksum": "257be27b86ac65b6593374fdbb03f6e456f6b26b2fac7a7d729d59de62a7f467",
+      "duration_seconds": 126.093,
+      "genres": [
+        "soft rock",
+        "electronic"
+      ],
+      "moods": [
+        "nostalgic",
+        "bold"
+      ],
+      "vocals": "mixed",
+      "energy": 0.469,
+      "bpm": 80,
+      "categories": [
+        "road_trips"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs12.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-014",
+      "title": "Night Bazaar",
+      "artist": "Nimbus Rushmere",
+      "source_url": "https://pixabay.com/music/night-bazaar-315595/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/jazz-hop/",
+      "file_reference": "audio/track-14.mp3",
+      "checksum": "6564a099bbdf22d39292d5e4af10d36af4018c969bb09baaf197ef0a03338196",
+      "duration_seconds": 103.576,
+      "genres": [
+        "jazz-hop",
+        "soft rock"
+      ],
+      "moods": [
+        "romantic",
+        "cozy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.494,
+      "bpm": 87,
+      "categories": [
+        "dining"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs13.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-015",
+      "title": "Sunlit Arcade",
+      "artist": "Onyx Amberly",
+      "source_url": "https://pixabay.com/music/sunlit-arcade-323514/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/soft-rock/",
+      "file_reference": "audio/track-15.mp3",
+      "checksum": "3fd070e5cfcee35933a4a04f19a703aa8a18d1546d2138f0377b83c0b0ce32b3",
+      "duration_seconds": 103.027,
+      "genres": [
+        "soft rock",
+        "piano"
+      ],
+      "moods": [
+        "nostalgic",
+        "melodic"
+      ],
+      "vocals": "vocal",
+      "energy": 0.464,
+      "bpm": 94,
+      "categories": [
+        "road_trips"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs14.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-016",
+      "title": "Harbour Lines",
+      "artist": "Prairie Cardinal",
+      "source_url": "https://pixabay.com/music/harbour-lines-331433/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/tropical/",
+      "file_reference": "audio/track-16.mp3",
+      "checksum": "fe69012eef595cabad3957c6548e6ebf460dd4a44e07e43bb582f1ea4b3f3597",
+      "duration_seconds": 60.552,
+      "genres": [
+        "tropical",
+        "cinematic"
+      ],
+      "moods": [
+        "playful",
+        "luminous"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.592,
+      "bpm": 101,
+      "categories": [
+        "beaches"
+      ],
+      "place_types": [
+        "island_beach",
+        "resort_area"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs15.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-017",
+      "title": "Weekend Wander",
+      "artist": "Quarry Jessup",
+      "source_url": "https://pixabay.com/music/weekend-wander-339352/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/indie/",
+      "file_reference": "audio/track-17.mp3",
+      "checksum": "de26e9ce6782f093dbfe45c4f353aeb9baa852e0cf81a5380dc2e0828a41657b",
+      "duration_seconds": 124.839,
+      "genres": [
+        "indie",
+        "house"
+      ],
+      "moods": [
+        "wistful",
+        "breezy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.478,
+      "bpm": 108,
+      "categories": [],
+      "place_types": [
+        "city_centre",
+        "transport_hub"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs16.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-018",
+      "title": "Copper Skies",
+      "artist": "Zenith Stonegate",
+      "source_url": "https://pixabay.com/music/copper-skies-347271/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/indie/",
+      "file_reference": "audio/track-18.mp3",
+      "checksum": "bc4f5428f969ecf44fdbe4a140f308e1087195a7956ec5b825e76c55a7e5e53d",
+      "duration_seconds": 105.953,
+      "genres": [
+        "indie",
+        "downtempo"
+      ],
+      "moods": [
+        "wistful",
+        "chill"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.697,
+      "bpm": null,
+      "categories": [],
+      "place_types": [
+        "city_centre",
+        "transport_hub"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs17.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-019",
+      "title": "Neon Arcade",
+      "artist": "Hollow Aalto",
+      "source_url": "https://pixabay.com/music/neon-arcade-355190/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-19.mp3",
+      "checksum": "8d00235de93ea28b074e27dc306388da93e97c6bf6e9ab0d6a94d433d2777826",
+      "duration_seconds": 132.415,
+      "genres": [
+        "ambient",
+        "trip hop"
+      ],
+      "moods": [
+        "calm",
+        "earthy"
+      ],
+      "vocals": "vocal",
+      "energy": 0.284,
+      "bpm": null,
+      "categories": [
+        "museums"
+      ],
+      "place_types": [
+        "art_museum"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs18.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-020",
+      "title": "Golden Hour Drive",
+      "artist": "Pebble Larkspur",
+      "source_url": "https://pixabay.com/music/golden-hour-drive-363109/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/synthwave/",
+      "file_reference": "audio/track-20.mp3",
+      "checksum": "9dac23a1ec3649e0607907ac1310578824360b3baf74780934e4022794a50a7d",
+      "duration_seconds": 133.381,
+      "genres": [
+        "synthwave",
+        "acoustic"
+      ],
+      "moods": [
+        "lively",
+        "epic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.72,
+      "bpm": null,
+      "categories": [
+        "nightlife"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs19.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-021",
+      "title": "Soft Machine",
+      "artist": "Zephyr Westbrook",
+      "source_url": "https://pixabay.com/music/soft-machine-371028/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/cinematic/",
+      "file_reference": "audio/track-21.mp3",
+      "checksum": "98e15a4cb4b534a1d3f0b83d0a5fd86d57d99087d08853c2272b71ee44f60a07",
+      "duration_seconds": 26.096,
+      "genres": [
+        "cinematic",
+        "percussion"
+      ],
+      "moods": [
+        "energetic",
+        "cinematic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.598,
+      "bpm": null,
+      "categories": [
+        "adventure"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs20.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-022",
+      "title": "Paper Boats",
+      "artist": "Bramble Ivybridge",
+      "source_url": "https://pixabay.com/music/paper-boats-378947/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/smooth-rnb/",
+      "file_reference": "audio/track-22.mp3",
+      "checksum": "0b81ac164fe1bbbc99efe10926c9844db09c852f836e00524bcc970283cd4a4f",
+      "duration_seconds": 158.041,
+      "genres": [
+        "smooth rnb",
+        "lo-fi"
+      ],
+      "moods": [
+        "calm",
+        "nostalgic"
+      ],
+      "vocals": "mixed",
+      "energy": 0.643,
+      "bpm": null,
+      "categories": [
+        "wellness"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs21.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-023",
+      "title": "Ferris Wheels",
+      "artist": "Indigo Ullswater",
+      "source_url": "https://pixabay.com/music/ferris-wheels-386866/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ukulele-pop/",
+      "file_reference": "audio/track-23.mp3",
+      "checksum": "6492a75465d3af5a23c91f70e027ab68945496f1f5d6f73abc135e51990dfbc1",
+      "duration_seconds": 106.632,
+      "genres": [
+        "ukulele pop",
+        "drum and bass"
+      ],
+      "moods": [
+        "cheerful",
+        "bright"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.484,
+      "bpm": null,
+      "categories": [
+        "family"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs22.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-024",
+      "title": "Slow Signal",
+      "artist": "Prairie Cardinal",
+      "source_url": "https://pixabay.com/music/slow-signal-394785/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/pop/",
+      "file_reference": "audio/track-24.mp3",
+      "checksum": "41db5853d52a8987633f7fe76eea31c69ecc574a7f8f86ac71a641c5f396c53d",
+      "duration_seconds": 158.433,
+      "genres": [
+        "pop",
+        "orchestral"
+      ],
+      "moods": [
+        "uplifting",
+        "gentle"
+      ],
+      "vocals": "vocal",
+      "energy": 0.553,
+      "bpm": null,
+      "categories": [
+        "walking"
+      ],
+      "place_types": [
+        "historic_street",
+        "heritage_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs23.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-025",
+      "title": "Marble Floor",
+      "artist": "Willow Northrop",
+      "source_url": "https://pixabay.com/music/marble-floor-402704/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/funk/",
+      "file_reference": "audio/track-25.mp3",
+      "checksum": "6209b94aad8e1fbe4dcce92db50adda4532430cab27edf2367149888f23190a6",
+      "duration_seconds": 104.385,
+      "genres": [
+        "funk",
+        "ambient"
+      ],
+      "moods": [
+        "lively",
+        "tranquil"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.9,
+      "bpm": null,
+      "categories": [
+        "festivals"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs24.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-026",
+      "title": "Idle Current",
+      "artist": "Flint Zephyrine",
+      "source_url": "https://pixabay.com/music/idle-current-410623/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/chillhop/",
+      "file_reference": "audio/track-26.mp3",
+      "checksum": "54aa880f9c52b15d7801bceb6955221c0b9295440ff53ab23c035ffc538857af",
+      "duration_seconds": 125.989,
+      "genres": [
+        "chillhop",
+        "synthwave"
+      ],
+      "moods": [
+        "refreshing",
+        "serene"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.348,
+      "bpm": null,
+      "categories": [
+        "nature"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs25.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-027",
+      "title": "Café Riddle",
+      "artist": "North Kilnsey",
+      "source_url": "https://pixabay.com/music/cafe-riddle-418542/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/jazz-hop/",
+      "file_reference": "audio/track-27.mp3",
+      "checksum": "e0fba157769ca20161655ea39fdf0e5156d5e639ae4194eac2bbe5e44f31dc88",
+      "duration_seconds": 102.087,
+      "genres": [
+        "jazz-hop",
+        "chillhop"
+      ],
+      "moods": [
+        "romantic",
+        "sparse"
+      ],
+      "vocals": "mixed",
+      "energy": 0.503,
+      "bpm": null,
+      "categories": [
+        "dining"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs26.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-028",
+      "title": "Tail Lights",
+      "artist": "Vale Whitlow",
+      "source_url": "https://pixabay.com/music/tail-lights-426461/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/trip-hop/",
+      "file_reference": "audio/track-28.mp3",
+      "checksum": "5bef1859c4e99e61a14382b1957c12da721a89d78d5136f954bbfd5e1c87f96b",
+      "duration_seconds": 79.543,
+      "genres": [
+        "trip hop",
+        "jazz-hop"
+      ],
+      "moods": [
+        "lively",
+        "driving"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.644,
+      "bpm": null,
+      "categories": [
+        "markets"
+      ],
+      "place_types": [
+        "street_market",
+        "night_market"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs28.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-029",
+      "title": "Open Windows",
+      "artist": "Everline Eastway",
+      "source_url": "https://pixabay.com/music/open-windows-434380/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/cinematic/",
+      "file_reference": "audio/track-29.mp3",
+      "checksum": "c223b634f30b90442b9b25f4d410bab9b35401b5760c5b2ee1c047f5696159be",
+      "duration_seconds": 65.776,
+      "genres": [
+        "cinematic",
+        "indie electronic"
+      ],
+      "moods": [
+        "tranquil",
+        "energetic"
+      ],
+      "vocals": "vocal",
+      "energy": 0.354,
+      "bpm": null,
+      "categories": [
+        "hiking"
+      ],
+      "place_types": [
+        "mountain_trail"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs29.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-030",
+      "title": "Glass City",
+      "artist": "Grove Penhurst",
+      "source_url": "https://pixabay.com/music/glass-city-442299/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/pop/",
+      "file_reference": "audio/track-30.mp3",
+      "checksum": "80017845a382f21fb5c5b91a0a7fc7ef6aefe4407b59aa7adc0e8a93fc5f3ab2",
+      "duration_seconds": 108.434,
+      "genres": [
+        "pop",
+        "neoclassical"
+      ],
+      "moods": [
+        "uplifting",
+        "jazzy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.513,
+      "bpm": null,
+      "categories": [
+        "walking"
+      ],
+      "place_types": [
+        "historic_street",
+        "heritage_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs30.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-031",
+      "title": "Night Ferry",
+      "artist": "Nimbus Brightwater",
+      "source_url": "https://pixabay.com/music/night-ferry-450218/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/indie/",
+      "file_reference": "audio/track-31.mp3",
+      "checksum": "d418b4708d7ee87c65300da6c12b1a7510d09cfaa1c86baaa19296db390e054f",
+      "duration_seconds": 119.014,
+      "genres": [
+        "indie",
+        "minimal electronic"
+      ],
+      "moods": [
+        "wistful",
+        "romantic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.378,
+      "bpm": null,
+      "categories": [],
+      "place_types": [
+        "city_centre",
+        "transport_hub"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs31.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-032",
+      "title": "Quiet Machines",
+      "artist": "Umber Moorcroft",
+      "source_url": "https://pixabay.com/music/quiet-machines-458137/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-32.mp3",
+      "checksum": "05359558492a0c0ab61ca03dff91f382dd3a753b6b9f170f023a93dc3b17fff4",
+      "duration_seconds": 118.648,
+      "genres": [
+        "ambient",
+        "tropical"
+      ],
+      "moods": [
+        "reflective",
+        "cosmic"
+      ],
+      "vocals": "mixed",
+      "energy": 0.239,
+      "bpm": null,
+      "categories": [
+        "historic_sites"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs33.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-033",
+      "title": "River Letters",
+      "artist": "Drift Amberly",
+      "source_url": "https://pixabay.com/music/river-letters-466056/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/lofi/",
+      "file_reference": "audio/track-33.mp3",
+      "checksum": "d6f77022a693e03c5076d9469b764ff26c265d4635aaef2bb43370e917611912",
+      "duration_seconds": 102.269,
+      "genres": [
+        "lofi",
+        "electronic"
+      ],
+      "moods": [
+        "relaxed",
+        "hopeful"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.488,
+      "bpm": null,
+      "categories": [
+        "cafes"
+      ],
+      "place_types": [
+        "cafe_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs36.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-034",
+      "title": "Sunlounger",
+      "artist": "Lichen Greenway",
+      "source_url": "https://pixabay.com/music/sunlounger-473975/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-34.mp3",
+      "checksum": "1f0b652a7df605e98eeeceb80f9a862ea9d086e7c3d1ff0585bc5e9b8d9117c1",
+      "duration_seconds": 116.297,
+      "genres": [
+        "ambient",
+        "soft rock"
+      ],
+      "moods": [
+        "serene",
+        "tender"
+      ],
+      "vocals": "vocal",
+      "energy": 0.46,
+      "bpm": null,
+      "categories": [
+        "waterfronts"
+      ],
+      "place_types": [
+        "waterfront_promenade"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs37.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-035",
+      "title": "Blue Platform",
+      "artist": "Summit Ravenswood",
+      "source_url": "https://pixabay.com/music/blue-platform-481894/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/lofi/",
+      "file_reference": "audio/track-35.mp3",
+      "checksum": "232d9e166653eb068a7219076cae69049f16a4ff1b601b9f49f88d87ea26a587",
+      "duration_seconds": 82.86,
+      "genres": [
+        "lofi",
+        "piano"
+      ],
+      "moods": [
+        "relaxed",
+        "mystical"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.484,
+      "bpm": null,
+      "categories": [
+        "cafes"
+      ],
+      "place_types": [
+        "cafe_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs38.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-036",
+      "title": "Cardboard Sun",
+      "artist": "Coastway Dunmore",
+      "source_url": "https://pixabay.com/music/cardboard-sun-489813/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/trip-hop/",
+      "file_reference": "audio/track-36.mp3",
+      "checksum": "a601824f4aaf0ab3c95b59848eee3af012def29dea11e5fd96da1c3f1460ec98",
+      "duration_seconds": 138.031,
+      "genres": [
+        "trip hop",
+        "cinematic"
+      ],
+      "moods": [
+        "lively",
+        "festive"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.641,
+      "bpm": null,
+      "categories": [
+        "markets"
+      ],
+      "place_types": [
+        "street_market",
+        "night_market"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs39.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-037",
+      "title": "Late Tram",
+      "artist": "Ember Oxley",
+      "source_url": "https://pixabay.com/music/late-tram-497732/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/neoclassical/",
+      "file_reference": "audio/track-37.mp3",
+      "checksum": "5462037249c835be9003234bd5a8cc6918af83e3828549d0e3bd92ca8145471d",
+      "duration_seconds": 149.603,
+      "genres": [
+        "neoclassical",
+        "house"
+      ],
+      "moods": [
+        "reflective",
+        "bold"
+      ],
+      "vocals": "mixed",
+      "energy": 0.33,
+      "bpm": null,
+      "categories": [
+        "architecture"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs40.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-038",
+      "title": "Second Spring",
+      "artist": "Lantern Coleridge",
+      "source_url": "https://pixabay.com/music/second-spring-505651/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/chillhop/",
+      "file_reference": "audio/track-38.mp3",
+      "checksum": "c41943022955c7366fc36c65a9a6ee7de5b3c5efcf331fb04652bc8c2630fd30",
+      "duration_seconds": 43.546,
+      "genres": [
+        "chillhop",
+        "downtempo"
+      ],
+      "moods": [
+        "refreshing",
+        "cozy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.344,
+      "bpm": null,
+      "categories": [
+        "nature"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs41.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-039",
+      "title": "Warm Setlist",
+      "artist": "Sable Ironwood",
+      "source_url": "https://pixabay.com/music/warm-setlist-513570/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/synthwave/",
+      "file_reference": "audio/track-39.mp3",
+      "checksum": "05f2d143dde54f54f4244c0014e83f5b4176aa10a7978c5c466c5234cef836b8",
+      "duration_seconds": 157.727,
+      "genres": [
+        "synthwave",
+        "trip hop"
+      ],
+      "moods": [
+        "lively",
+        "melodic"
+      ],
+      "vocals": "vocal",
+      "energy": 0.736,
+      "bpm": null,
+      "categories": [
+        "nightlife"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs42.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-040",
+      "title": "Neon Sparrow",
+      "artist": "Basalt Thistledown",
+      "source_url": "https://pixabay.com/music/neon-sparrow-521489/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/jazz-hop/",
+      "file_reference": "audio/track-40.mp3",
+      "checksum": "1263ab5f1badfd507eeb5b4ad430fad7f4835f1896e21dacad90cd7968a644f2",
+      "duration_seconds": 143.438,
+      "genres": [
+        "jazz-hop",
+        "acoustic"
+      ],
+      "moods": [
+        "romantic",
+        "luminous"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.495,
+      "bpm": null,
+      "categories": [
+        "dining"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs43.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-041",
+      "title": "Golden Alley",
+      "artist": "Isle Fernbank",
+      "source_url": "https://pixabay.com/music/golden-alley-529408/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-41.mp3",
+      "checksum": "45b79996f595f1def8b92eafeb9baab6dcb9d6dc26d344f699b34ff7b83e9eb3",
+      "duration_seconds": 60.395,
+      "genres": [
+        "ambient",
+        "percussion"
+      ],
+      "moods": [
+        "serene",
+        "breezy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.439,
+      "bpm": null,
+      "categories": [
+        "waterfronts"
+      ],
+      "place_types": [
+        "waterfront_promenade"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs44.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-042",
+      "title": "Soft Meridian",
+      "artist": "Quartz Rushmere",
+      "source_url": "https://pixabay.com/music/soft-meridian-537327/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/acoustic/",
+      "file_reference": "audio/track-42.mp3",
+      "checksum": "40ba74cba8bf7f7730348bc3a1f8d35e96f906c4ec44ba836c89e74cf7aaffc1",
+      "duration_seconds": 69.878,
+      "genres": [
+        "acoustic",
+        "lo-fi"
+      ],
+      "moods": [
+        "peaceful",
+        "chill"
+      ],
+      "vocals": "mixed",
+      "energy": 0.408,
+      "bpm": null,
+      "categories": [
+        "parks"
+      ],
+      "place_types": [
+        "urban_park",
+        "botanical_garden"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs45.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-043",
+      "title": "Paper Moths",
+      "artist": "Anchor Everleigh",
+      "source_url": "https://pixabay.com/music/paper-moths-545246/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/house/",
+      "file_reference": "audio/track-43.mp3",
+      "checksum": "a78bd1d576126628b40b596068be19bbf653b102491a02a83ac507e4cd07ff80",
+      "duration_seconds": 116.976,
+      "genres": [
+        "house",
+        "drum and bass"
+      ],
+      "moods": [
+        "upbeat",
+        "earthy"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.744,
+      "bpm": null,
+      "categories": [
+        "shopping"
+      ],
+      "place_types": [
+        "shopping_mall"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs46.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-044",
+      "title": "Bright Pennants",
+      "artist": "Cedar Kirkwall",
+      "source_url": "https://pixabay.com/music/bright-pennants-553165/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-44.mp3",
+      "checksum": "434a8370661569decde5fbe32d24578cd956ebc24b873c3d05339e66862fcbba",
+      "duration_seconds": 58.88,
+      "genres": [
+        "ambient",
+        "orchestral"
+      ],
+      "moods": [
+        "serene",
+        "epic"
+      ],
+      "vocals": "vocal",
+      "energy": 0.416,
+      "bpm": null,
+      "categories": [
+        "waterfronts"
+      ],
+      "place_types": [
+        "waterfront_promenade"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs47.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-045",
+      "title": "Slow Riverside",
+      "artist": "Juniper Vesper",
+      "source_url": "https://pixabay.com/music/slow-riverside-561084/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/house/",
+      "file_reference": "audio/track-45.mp3",
+      "checksum": "b1d611fe8a94408cd95b7f97a7cb23938e44b8704defcdad140cf7a90d542b62",
+      "duration_seconds": 156.709,
+      "genres": [
+        "house",
+        "ambient"
+      ],
+      "moods": [
+        "upbeat",
+        "cinematic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.747,
+      "bpm": null,
+      "categories": [
+        "shopping"
+      ],
+      "place_types": [
+        "shopping_mall"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs48.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-046",
+      "title": "Marble Sky",
+      "artist": "Quarry Hartwell",
+      "source_url": "https://pixabay.com/music/marble-sky-569003/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ambient/",
+      "file_reference": "audio/track-46.mp3",
+      "checksum": "7c72deb45dcc0edef6899adb6ccd39215aa8b2ea4a21578542084bfafbacd345",
+      "duration_seconds": 196.807,
+      "genres": [
+        "ambient",
+        "synthwave"
+      ],
+      "moods": [
+        "calm",
+        "nostalgic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.272,
+      "bpm": null,
+      "categories": [
+        "museums"
+      ],
+      "place_types": [
+        "art_museum"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs49.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-047",
+      "title": "Easy Current",
+      "artist": "Yarrow Thornbury",
+      "source_url": "https://pixabay.com/music/easy-current-576922/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/acoustic/",
+      "file_reference": "audio/track-47.mp3",
+      "checksum": "9332797580a9629edf970a4d996cccdb863c63c694ae07f004a32f9ddbc75e44",
+      "duration_seconds": 152.921,
+      "genres": [
+        "acoustic",
+        "chillhop"
+      ],
+      "moods": [
+        "peaceful",
+        "bright"
+      ],
+      "vocals": "mixed",
+      "energy": 0.381,
+      "bpm": null,
+      "categories": [
+        "parks"
+      ],
+      "place_types": [
+        "urban_park",
+        "botanical_garden"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs50.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-048",
+      "title": "Café Lantern",
+      "artist": "Glade Bellweather",
+      "source_url": "https://pixabay.com/music/cafe-lantern-584841/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/tropical/",
+      "file_reference": "audio/track-48.mp3",
+      "checksum": "632a4576b992926f5ca934c2919561382a1ec34aea13c0e3a1f1c8a8c481b101",
+      "duration_seconds": 123.24,
+      "genres": [
+        "tropical",
+        "jazz-hop"
+      ],
+      "moods": [
+        "playful",
+        "gentle"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.569,
+      "bpm": null,
+      "categories": [
+        "beaches"
+      ],
+      "place_types": [
+        "island_beach",
+        "resort_area"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs51.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-049",
+      "title": "Tail Signals",
+      "artist": "Orchard Merrick",
+      "source_url": "https://pixabay.com/music/tail-signals-592760/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/neoclassical/",
+      "file_reference": "audio/track-49.mp3",
+      "checksum": "b325916dfbe178a07d798a78bbdc49b3b84a7e0897b74de7de265403a154b984",
+      "duration_seconds": 113.58,
+      "genres": [
+        "neoclassical",
+        "indie electronic"
+      ],
+      "moods": [
+        "reflective",
+        "tranquil"
+      ],
+      "vocals": "vocal",
+      "energy": 0.331,
+      "bpm": null,
+      "categories": [
+        "architecture"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs52.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-050",
+      "title": "Open Rooftops",
+      "artist": "Wold Yarrowby",
+      "source_url": "https://pixabay.com/music/open-rooftops-600679/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/lofi/",
+      "file_reference": "audio/track-50.mp3",
+      "checksum": "1dcbefd551553386a9e5b08c52af33a556af4b62e92d7849698d2c4fe88ce923",
+      "duration_seconds": 100.493,
+      "genres": [
+        "lofi",
+        "neoclassical"
+      ],
+      "moods": [
+        "relaxed",
+        "serene"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.477,
+      "bpm": null,
+      "categories": [
+        "cafes"
+      ],
+      "place_types": [
+        "cafe_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs53.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-051",
+      "title": "Glasshouse Walk",
+      "artist": "Alder Jasperly",
+      "source_url": "https://pixabay.com/music/glasshouse-walk-608598/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/cinematic/",
+      "file_reference": "audio/track-51.mp3",
+      "checksum": "a979c76230a8b83841a776a0592eac09501325384ecc38306b824cfa7f4032e8",
+      "duration_seconds": 132.049,
+      "genres": [
+        "cinematic",
+        "minimal electronic"
+      ],
+      "moods": [
+        "tranquil",
+        "sparse"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.355,
+      "bpm": null,
+      "categories": [
+        "hiking"
+      ],
+      "place_types": [
+        "mountain_trail"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/Songs54.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-052",
+      "title": "Slow Tide",
+      "artist": "Harbor Vantablack",
+      "source_url": "https://pixabay.com/music/velvet-steps-616517/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/smooth-rnb/",
+      "file_reference": "audio/track-52.mp3",
+      "checksum": "bfd721fa8232af7d35693e070f595701b0e8b18581c1dec47db62a480d797173",
+      "duration_seconds": 185.887,
+      "genres": [
+        "smooth rnb",
+        "tropical"
+      ],
+      "moods": [
+        "calm",
+        "driving"
+      ],
+      "vocals": "mixed",
+      "energy": 0.253,
+      "bpm": null,
+      "categories": [
+        "wellness"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/purrplecat-long-day-518602.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-053",
+      "title": "Gentle Stream",
+      "artist": "Onyx Dovetail",
+      "source_url": "https://pixabay.com/music/signal-fires-624436/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/lofi/",
+      "file_reference": "audio/track-53.mp3",
+      "checksum": "f1caa9d688b7f4c299f5479801b9097f82b4091ea80b4631891038e7eb46d9f4",
+      "duration_seconds": 131.553,
+      "genres": [
+        "lofi",
+        "electronic"
+      ],
+      "moods": [
+        "wistful",
+        "energetic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.374,
+      "bpm": null,
+      "categories": [
+        "rainy_day"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/artur_aravidi_music-a-quiet-courtyard-lofi-621847.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-054",
+      "title": "Festival Nightfall",
+      "artist": "Verdant Oakhart",
+      "source_url": "https://pixabay.com/music/ice-garden-632355/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/funk/",
+      "file_reference": "audio/track-54.mp3",
+      "checksum": "0c753d3fef93d86d217363dc89bcd09ce161af37c72d5d4d0ddc724042320a89",
+      "duration_seconds": 102.792,
+      "genres": [
+        "funk",
+        "soft rock"
+      ],
+      "moods": [
+        "lively",
+        "jazzy"
+      ],
+      "vocals": "vocal",
+      "energy": 0.589,
+      "bpm": null,
+      "categories": [
+        "festivals"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/echobrainz-africa-623614.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-055",
+      "title": "Ukulele Morning",
+      "artist": "Echo Ashcombe",
+      "source_url": "https://pixabay.com/music/rooftop-wind-640274/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/ukulele-pop/",
+      "file_reference": "audio/track-55.mp3",
+      "checksum": "9f01b82014457a5f9b319b94f47da277b6e491efaca8026d4c70e7d9a3d56aa8",
+      "duration_seconds": 132.859,
+      "genres": [
+        "ukulele pop",
+        "piano"
+      ],
+      "moods": [
+        "cheerful",
+        "romantic"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.417,
+      "bpm": null,
+      "categories": [
+        "family"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_recording",
+        "audio_source_file": "assets/audio-pool/echobrainz-upbeat-indie-rock-624221.mp3",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-056",
+      "title": "Night Miles",
+      "artist": "Harbor Vantablack",
+      "source_url": "https://pixabay.com/music/night-miles-648193/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/synthwave/",
+      "file_reference": "audio/track-56.mp3",
+      "checksum": "7861394c21220e800cdca6776080adb7d1a1a784f84ae71eefba78f2191b5b2a",
+      "duration_seconds": 60.029,
+      "genres": [
+        "synthwave",
+        "cinematic"
+      ],
+      "moods": [
+        "lively",
+        "cosmic"
+      ],
+      "vocals": "mixed",
+      "energy": 0.718,
+      "bpm": null,
+      "categories": [
+        "nightlife"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_excerpt",
+        "audio_source_file": "assets/audio-pool/Songs27.mp3 (30.00s–90.00s)",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-057",
+      "title": "Quiet Hallways",
+      "artist": "Onyx Dovetail",
+      "source_url": "https://pixabay.com/music/quiet-hallways-656112/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/drum-and-bass/",
+      "file_reference": "audio/track-57.mp3",
+      "checksum": "da1efb3082b782ab999224d3833a27fe006975ea896f1eca4f948b736b2f8e39",
+      "duration_seconds": 60.029,
+      "genres": [
+        "drum and bass",
+        "house"
+      ],
+      "moods": [
+        "energetic",
+        "hopeful"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.633,
+      "bpm": null,
+      "categories": [
+        "cycling"
+      ],
+      "place_types": [],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_excerpt",
+        "audio_source_file": "assets/audio-pool/Songs32.mp3 (30.00s–90.00s)",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-058",
+      "title": "River Steps",
+      "artist": "Verdant Oakhart",
+      "source_url": "https://pixabay.com/music/river-steps-664031/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/acoustic/",
+      "file_reference": "audio/track-58.mp3",
+      "checksum": "74e7b93728976fc6077a3e86660a62cac39ccbefe52ce4326e5a959af35f05a7",
+      "duration_seconds": 60.029,
+      "genres": [
+        "acoustic",
+        "downtempo"
+      ],
+      "moods": [
+        "peaceful",
+        "tender"
+      ],
+      "vocals": "vocal",
+      "energy": 0.383,
+      "bpm": null,
+      "categories": [
+        "parks"
+      ],
+      "place_types": [
+        "urban_park",
+        "botanical_garden"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_excerpt",
+        "audio_source_file": "assets/audio-pool/Songs34.mp3 (30.00s–90.00s)",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    },
+    {
+      "track_id": "glassnik-059",
+      "title": "Sun Deckchair",
+      "artist": "Echo Ashcombe",
+      "source_url": "https://pixabay.com/music/sun-deckchair-671950/",
+      "source_url_status": "candidate_unverified",
+      "source_search_url": "https://pixabay.com/music/search/pop/",
+      "file_reference": "audio/track-59.mp3",
+      "checksum": "5a9ef12a28b2d94d6205bf84dbd7853a6fa874a769598c24abb7c962cf90580c",
+      "duration_seconds": 60.029,
+      "genres": [
+        "pop",
+        "trip hop"
+      ],
+      "moods": [
+        "uplifting",
+        "mystical"
+      ],
+      "vocals": "instrumental",
+      "energy": 0.528,
+      "bpm": null,
+      "categories": [
+        "walking"
+      ],
+      "place_types": [
+        "historic_street",
+        "heritage_district"
+      ],
+      "destinations": [],
+      "provenance": {
+        "status": "pool_recording_catalogue_record",
+        "generator": "scripts/build-data.mjs",
+        "audio_origin": "approved_pool_excerpt",
+        "audio_source_file": "assets/audio-pool/Songs35.mp3 (25.52s–85.52s)",
+        "source_url_status": "candidate_unverified",
+        "note": "Title, artist, mood and source URL are locally generated placeholders pending human licence verification. The audio itself is a real local pool recording."
+      },
+      "licence_source": "https://pixabay.com/service/license-summary/",
+      "content_id_flag": "unverified",
+      "review_status": "pending_source_verification",
+      "approved_for_production": true
+    }
+  ]
+}

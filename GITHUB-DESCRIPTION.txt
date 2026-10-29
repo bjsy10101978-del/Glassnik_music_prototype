@@ -1,0 +1,52 @@
+GLASSNIK MUSIC PROTOTYPE - GitHub description
+=============================================
+
+Suggested repo name:  glassnik-music-prototype
+
+One-line description (for the "About" field):
+A working prototype where background music follows each Eye-POV video Experience - chosen by its Category, Place and Location - powered by a 59-track real-recording music library.
+
+Short description
+-----------------
+Glassnik is a research prototype showing how a music system can follow
+Eye-POV video Experiences end to end. Music is chosen from the
+Experience's Category, Place and Location and keeps playing while you
+move through the videos inside the same grouping. The library holds 59
+unique real recordings (about 112.6 minutes), and every one of the 21
+upload categories owns its own separate music pool - a recording is
+never allowed to sit in two pools.
+
+The viewer follows the platform brief: no track or artist names over
+the videos, song details live on a separate Music credits page, a
+simple three-option music menu, no autoplay (music starts only on the
+user's click), no standalone music player, and no way to download the
+audio files.
+
+Honesty is built in: every recording's real Pixabay identity (creator,
+title, item ID, exact download URL and date) is saved with the project
+(data/download-stamps.json), the Pixabay licence terms are captured and
+dated in docs/licensing-and-sourcing.md, a per-track licence register
+exists (data/licence-review.csv), and the app itself shows a "music
+rights unverified" badge until human verification is complete. The
+formal row-by-row licence pass is documented as deferred for the
+prototype phase and planned before any real launch. Any single track
+can be removed with one catalogue entry plus a rebuild (takedown-ready).
+
+Run it
+------
+  npm install
+  npm run dev            # http://localhost:5173/
+  npm test               # 114 unit tests
+  npm run build          # type-check + production build
+  npm run verify:audio   # checks all 59 files (unique, readable, measured)
+  npm run check:browser  # 56 real-browser checks (Chromium + WebKit)
+
+Notes
+-----
+- public/audio holds the 59 shipped tracks and is required to run.
+- assets/audio-pool (the source recordings) is intentionally NOT
+  committed, per the project's rights rules; data/ carries the measured
+  catalogue facts instead.
+- Status: research prototype. 114 unit tests and 56 browser checks pass
+  on both Chromium and WebKit; remaining open items are tracked in
+  TODAY.txt.

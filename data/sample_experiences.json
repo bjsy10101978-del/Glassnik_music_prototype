@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Synthetic test experiences. First five form a consecutive Kuala Lumpur shopping sequence for continuous playback testing.",
+  "experiences": [
+    {
+      "experience_id": "exp-kl-shopping-01",
+      "title": "Shopping stroll, Kuala Lumpur",
+      "destination": "Kuala Lumpur",
+      "category_id": "shopping",
+      "place_type": "city_centre",
+      "video_reference": null,
+      "sequence_group": "kuala-lumpur-shopping-continuous",
+      "sequence_index": 1,
+      "music_context": {
+        "preferred_moods": [
+          "calm"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-kl-shopping-02",
+      "title": "Market lanes, Kuala Lumpur",
+      "destination": "Kuala Lumpur",
+      "category_id": "shopping",
+      "place_type": "street_market",
+      "video_reference": null,
+      "sequence_group": "kuala-lumpur-shopping-continuous",
+      "sequence_index": 2,
+      "music_context": {
+        "preferred_moods": [
+          "curious"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-kl-shopping-03",
+      "title": "Mall interiors, Kuala Lumpur",
+      "destination": "Kuala Lumpur",
+      "category_id": "shopping",
+      "place_type": "shopping_mall",
+      "video_reference": null,
+      "sequence_group": "kuala-lumpur-shopping-continuous",
+      "sequence_index": 3,
+      "music_context": {
+        "preferred_moods": [
+          "uplifting"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-kl-shopping-04",
+      "title": "Evening retail district, Kuala Lumpur",
+      "destination": "Kuala Lumpur",
+      "category_id": "shopping",
+      "place_type": "city_centre",
+      "video_reference": null,
+      "sequence_group": "kuala-lumpur-shopping-continuous",
+      "sequence_index": 4,
+      "music_context": {
+        "preferred_moods": [
+          "reflective"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-kl-shopping-05",
+      "title": "Night shopping, Kuala Lumpur",
+      "destination": "Kuala Lumpur",
+      "category_id": "shopping",
+      "place_type": "night_market",
+      "video_reference": null,
+      "sequence_group": "kuala-lumpur-shopping-continuous",
+      "sequence_index": 5,
+      "music_context": {
+        "preferred_moods": [
+          "playful"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-tokyo-shopping",
+      "title": "Tokyo shopping district",
+      "destination": "Tokyo",
+      "category_id": "shopping",
+      "place_type": "shopping_mall",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "dreamy"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-phu-quoc-beach",
+      "title": "Phu Quoc beach walk",
+      "destination": "Phu Quoc",
+      "category_id": "beaches",
+      "place_type": "island_beach",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "focused"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-paris-historic",
+      "title": "Paris historic street",
+      "destination": "Paris",
+      "category_id": "walking",
+      "place_type": "historic_street",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "warm"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-auckland-waterfront",
+      "title": "Auckland waterfront evening",
+      "destination": "Auckland",
+      "category_id": "waterfronts",
+      "place_type": "waterfront_promenade",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "calm"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-kyoto-museum",
+      "title": "Kyoto museum afternoon",
+      "destination": "Kyoto",
+      "category_id": "museums",
+      "place_type": "art_museum",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "curious"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-singapore-park",
+      "title": "Singapore park loop",
+      "destination": "Singapore",
+      "category_id": "parks",
+      "place_type": "urban_park",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "uplifting"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-lisbon-market",
+      "title": "Lisbon street market",
+      "destination": "Lisbon",
+      "category_id": "markets",
+      "place_type": "street_market",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "reflective"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-melbourne-cafe",
+      "title": "Melbourne cafe district",
+      "destination": "Melbourne",
+      "category_id": "cafes",
+      "place_type": "cafe_district",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "playful"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-missing-place",
+      "title": "Experience with missing place type",
+      "destination": null,
+      "category_id": "walking",
+      "place_type": null,
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "dreamy"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    },
+    {
+      "experience_id": "exp-missing-category",
+      "title": "Experience with missing category",
+      "destination": "Barcelona",
+      "category_id": null,
+      "place_type": "city_centre",
+      "video_reference": null,
+      "sequence_group": null,
+      "sequence_index": null,
+      "music_context": {
+        "preferred_moods": [
+          "focused"
+        ],
+        "energy_range": [
+          0.2,
+          0.85
+        ]
+      },
+      "metadata_status": "synthetic_test_record",
+      "notes": "Synthetic fixture. Add a lawful local video reference and validate required fields before player testing."
+    }
+  ]
+}

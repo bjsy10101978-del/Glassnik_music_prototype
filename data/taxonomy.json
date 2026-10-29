@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Configurable Glassnik experience taxonomy for research prototype matching.",
+  "category_ids": [
+    {
+      "category_id": "shopping",
+      "label": "Shopping"
+    },
+    {
+      "category_id": "walking",
+      "label": "Walking"
+    },
+    {
+      "category_id": "cycling",
+      "label": "Cycling"
+    },
+    {
+      "category_id": "beaches",
+      "label": "Beaches"
+    },
+    {
+      "category_id": "markets",
+      "label": "Markets"
+    },
+    {
+      "category_id": "museums",
+      "label": "Museums"
+    },
+    {
+      "category_id": "parks",
+      "label": "Parks"
+    },
+    {
+      "category_id": "waterfronts",
+      "label": "Waterfronts"
+    },
+    {
+      "category_id": "nightlife",
+      "label": "Nightlife"
+    },
+    {
+      "category_id": "dining",
+      "label": "Dining"
+    },
+    {
+      "category_id": "cafes",
+      "label": "Cafes"
+    },
+    {
+      "category_id": "hiking",
+      "label": "Hiking"
+    },
+    {
+      "category_id": "road_trips",
+      "label": "Road Trips"
+    },
+    {
+      "category_id": "nature",
+      "label": "Nature"
+    },
+    {
+      "category_id": "architecture",
+      "label": "Architecture"
+    },
+    {
+      "category_id": "historic_sites",
+      "label": "Historic Sites"
+    },
+    {
+      "category_id": "festivals",
+      "label": "Festivals"
+    },
+    {
+      "category_id": "wellness",
+      "label": "Wellness"
+    },
+    {
+      "category_id": "adventure",
+      "label": "Adventure"
+    },
+    {
+      "category_id": "family",
+      "label": "Family"
+    },
+    {
+      "category_id": "rainy_day",
+      "label": "Rainy Day"
+    }
+  ],
+  "place_types": [
+    {
+      "place_type": "shopping_mall",
+      "label": "Shopping Mall"
+    },
+    {
+      "place_type": "historic_street",
+      "label": "Historic Street"
+    },
+    {
+      "place_type": "island_beach",
+      "label": "Island Beach"
+    },
+    {
+      "place_type": "city_centre",
+      "label": "City Centre"
+    },
+    {
+      "place_type": "street_market",
+      "label": "Street Market"
+    },
+    {
+      "place_type": "art_museum",
+      "label": "Art Museum"
+    },
+    {
+      "place_type": "urban_park",
+      "label": "Urban Park"
+    },
+    {
+      "place_type": "waterfront_promenade",
+      "label": "Waterfront Promenade"
+    },
+    {
+      "place_type": "night_market",
+      "label": "Night Market"
+    },
+    {
+      "place_type": "cafe_district",
+      "label": "Cafe District"
+    },
+    {
+      "place_type": "mountain_trail",
+      "label": "Mountain Trail"
+    },
+    {
+      "place_type": "botanical_garden",
+      "label": "Botanical Garden"
+    },
+    {
+      "place_type": "heritage_district",
+      "label": "Heritage District"
+    },
+    {
+      "place_type": "resort_area",
+      "label": "Resort Area"
+    },
+    {
+      "place_type": "transport_hub",
+      "label": "Transport Hub"
+    }
+  ],
+  "notes": [
+    "Taxonomy labels are prototype configuration, not a production classification standard.",
+    "Review and version taxonomy changes before using them in recommendation logic."
+  ]
+}

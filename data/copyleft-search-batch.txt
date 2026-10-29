@@ -1,0 +1,56 @@
+# VERIFICATION LIST - real Pixabay identity recovered from macOS download stamps.
+# No Pixabay account was used for the downloads; the stamp on each file records the
+# exact Pixabay CDN URL (item ID in filename=) and the download date. The item page
+# URL below is built as https://pixabay.com/music/<title-slug>-<item-ID>/ - the ID is
+# fact, the slug is a convention: if it 404s, search the item ID on pixabay.com.
+# Register rows stay UNKNOWN until a human opens the page, listens, and ticks.
+
+# If a link shows 404: copy the item ID from that row and search it on pixabay.com (or google 'pixabay <id>') - the ID is the reliable part, Pixabay may name the page slightly differently.
+
+# track_id | duration | pixabay download filename | item ID | item page to open
+glassnik-001 | 2:12 (131.7s) | aberrantrealities-organic-flow-1015-remastered-485950.mp3 | 485950 | https://pixabay.com/music/organic-flow-1015-remastered-485950/
+glassnik-002 | 1:46 (106.2s) | alexgrohl-energetic-action-sport-500409.mp3 | 500409 | https://pixabay.com/music/energetic-action-sport-500409/
+glassnik-003 | 2:08 (128.3s) | alexgrohl-motivation-sport-rock-trailer-478796.mp3 | 478796 | https://pixabay.com/music/motivation-sport-rock-trailer-478796/
+glassnik-004 | 1:38 (98.1s) | audioknap-music-free-458044.mp3 | 458044 | https://pixabay.com/music/music-free-458044/
+glassnik-005 | 1:42 (101.8s) | bransboynd-night-summer-lounge-473222.mp3 | 473222 | https://pixabay.com/music/night-summer-lounge-473222/
+glassnik-006 | 1:59 (118.8s) | freemusiclab-dark-cyberpunk-i-free-background-music-i-free-music-lab-release-469493.mp3 | 469493 | https://pixabay.com/music/dark-cyberpunk-i-free-background-music-i-free-music-lab-release-469493/
+glassnik-007 | 2:22 (142.1s) | giorgiovitte-berry-groovy-bass-trap-476603.mp3 | 476603 | https://pixabay.com/music/berry-groovy-bass-trap-476603/
+glassnik-008 | 3:31 (211.4s) | ilyatruhanov-for-p-453681.mp3 | 453681 | https://pixabay.com/music/for-p-453681/
+glassnik-009 | 2:47 (167.0s) | kontraa-no-sleep-hiphop-music-473847.mp3 | 473847 | https://pixabay.com/music/no-sleep-hiphop-music-473847/
+glassnik-010 | 2:00 (120.0s) | kornevmusic-epic-478847.mp3 | 478847 | https://pixabay.com/music/epic-478847/
+glassnik-011 | 2:02 (122.0s) | kornevmusic-upbeat-happy-corporate-487426.mp3 | 487426 | https://pixabay.com/music/upbeat-happy-corporate-487426/
+glassnik-012 | 2:15 (134.7s) | lightstockmusic-strong-character-powerful-fuzz-action-sport-rock-513742.mp3 | 513742 | https://pixabay.com/music/strong-character-powerful-fuzz-action-sport-rock-513742/
+glassnik-013 | 2:06 (126.1s) | magpiemusic-action-race-rock-music-513682.mp3 | 513682 | https://pixabay.com/music/action-race-rock-music-513682/
+glassnik-014 | 1:44 (103.6s) | magpiemusic-action-trailer-promo-rock-513687.mp3 | 513687 | https://pixabay.com/music/action-trailer-promo-rock-513687/
+glassnik-015 | 1:43 (103.0s) | tunetank-christmas-347469.mp3 | 347469 | https://pixabay.com/music/christmas-347469/
+glassnik-016 | 1:01 (60.6s) | alec_koff-carnaval-484622.mp3 | 484622 | https://pixabay.com/music/carnaval-484622/
+glassnik-017 | 2:05 (124.8s) | alexguz-funk-amp-breakbeat-upbeat-advertising-happy-cook-541097.mp3 | 541097 | https://pixabay.com/music/funk-amp-breakbeat-upbeat-advertising-happy-cook-541097/
+glassnik-018 | 1:46 (106.0s) | alexzavesa-dance-playful-night-510786.mp3 | 510786 | https://pixabay.com/music/dance-playful-night-510786/
+glassnik-019 | 2:12 (132.4s) | artmylife-powerful-dramatic-trailer-514242.mp3 | 514242 | https://pixabay.com/music/powerful-dramatic-trailer-514242/
+glassnik-020 | 2:13 (133.4s) | vaitsez-vlog-vlog-beat-620108.mp3 | 620108 | https://pixabay.com/music/vlog-vlog-beat-620108/
+glassnik-024 | 2:38 (158.4s) | loka_music-inspiring-travel-acoustic-621191.mp3 | 621191 | https://pixabay.com/music/inspiring-travel-acoustic-621191/
+glassnik-026 | 2:06 (126.0s) | primalhousemusic-no-more-beautiful-night-621105.mp3 | 621105 | https://pixabay.com/music/no-more-beautiful-night-621105/
+glassnik-027 | 1:42 (102.1s) | sound4stock-halloween-spooky-music-620458.mp3 | 620458 | https://pixabay.com/music/halloween-spooky-music-620458/
+glassnik-028 | 1:20 (79.5s) | audioera-stylish-trailer-percussion-622881.mp3 | 622881 | https://pixabay.com/music/stylish-trailer-percussion-622881/
+glassnik-029 | 1:06 (65.8s) | bombinsound-halloween-suspense-horror-halloween-waltz-619348.mp3 | 619348 | https://pixabay.com/music/halloween-suspense-horror-halloween-waltz-619348/
+glassnik-030 | 1:48 (108.4s) | eugenemyers-the-borderland-620019.mp3 | 620019 | https://pixabay.com/music/the-borderland-620019/
+glassnik-031 | 1:59 (119.0s) | ikoliks-uplifting-action-sport-energetic-rock-619094.mp3 | 619094 | https://pixabay.com/music/uplifting-action-sport-energetic-rock-619094/
+glassnik-033 | 1:42 (102.3s) | audioera-cinematic-background-music-618542.mp3 | 618542 | https://pixabay.com/music/cinematic-background-music-618542/
+glassnik-034 | 1:56 (116.3s) | audioknap-the-hip-hop-618430.mp3 | 618430 | https://pixabay.com/music/the-hip-hop-618430/
+glassnik-035 | 1:23 (82.9s) | energysound-stomp-drum-percussion-513744.mp3 | 513744 | https://pixabay.com/music/stomp-drum-percussion-513744/
+glassnik-036 | 2:18 (138.0s) | fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3 | 412230 | https://pixabay.com/music/escape-your-love-upbeat-fashion-pop-dance-412230/
+glassnik-037 | 2:30 (149.6s) | grand_project-wonders-of-the-earth-550792.mp3 | 550792 | https://pixabay.com/music/wonders-of-the-earth-550792/
+glassnik-038 | 0:44 (43.5s) | grumpynora-lay-back-619255.mp3 | 619255 | https://pixabay.com/music/lay-back-619255/
+glassnik-039 | 2:38 (157.7s) | gvidon-gvidon-medicine-364031.mp3 | 364031 | https://pixabay.com/music/gvidon-medicine-364031/
+glassnik-040 | 2:23 (143.4s) | ikoliks_aj-background-music-320427.mp3 | 320427 | https://pixabay.com/music/background-music-320427/
+glassnik-041 | 1:00 (60.4s) | jonasblakewood-background-music-618629.mp3 | 618629 | https://pixabay.com/music/background-music-618629/
+glassnik-042 | 1:10 (69.9s) | kontraa-water-afro-pop-music-445661.mp3 | 445661 | https://pixabay.com/music/water-afro-pop-music-445661/
+glassnik-043 | 1:57 (117.0s) | lnplusmusic-sport-sports-rock-music-597971.mp3 | 597971 | https://pixabay.com/music/sport-sports-rock-music-597971/
+glassnik-044 | 0:59 (58.9s) | lnplusmusic-suspense-tension-suspenseful-tense-323181.mp3 | 323181 | https://pixabay.com/music/suspense-tension-suspenseful-tense-323181/
+glassnik-045 | 2:37 (156.7s) | miromaxmusic-club-no-copyright-618622.mp3 | 618622 | https://pixabay.com/music/club-no-copyright-618622/
+glassnik-046 | 3:17 (196.8s) | musicdream-dramatic-cinematic-documentary-609202.mp3 | 609202 | https://pixabay.com/music/dramatic-cinematic-documentary-609202/
+glassnik-047 | 2:33 (152.9s) | polytunes-heroes-never-die-617232.mp3 | 617232 | https://pixabay.com/music/heroes-never-die-617232/
+glassnik-048 | 2:03 (123.2s) | sigmamusicart-no-copyright-music-537751.mp3 | 537751 | https://pixabay.com/music/no-copyright-music-537751/
+glassnik-049 | 1:54 (113.6s) | producesplatinum-vlog-hip-hop-483574.mp3 | 483574 | https://pixabay.com/music/vlog-hip-hop-483574/
+glassnik-050 | 1:40 (100.5s) | sonican-lo-fi-music-loop-sentimental-jazzy-love-473154.mp3 | 473154 | https://pixabay.com/music/lo-fi-music-loop-sentimental-jazzy-love-473154/
+glassnik-051 | 2:12 (132.0s) | tunetank-inspiring-cinematic-music-409347.mp3 | 409347 | https://pixabay.com/music/inspiring-cinematic-music-409347/

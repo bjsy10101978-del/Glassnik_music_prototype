@@ -1,0 +1,648 @@
+{
+  "captured": "2026-10-28T17:19:52",
+  "how": "Read from macOS 'downloaded from' stamps (com.apple.metadata:kMDItemWhereFroms / kMDItemDownloadedDate) on the files in assets/audio-pool/. Downloads were made WITHOUT a Pixabay account; these stamps + the files themselves are the evidence chain. The trailing number in each Pixabay filename is the item ID from the download URL's filename= parameter - the item page URL must still be opened and confirmed by a human.",
+  "note": "The 4 files with Pixabay download names were hand-downloaded on 28 Oct 2026; their identity is also in their filenames.",
+  "files": [
+    {
+      "pool_file": "Songs0.mp3",
+      "track_ids": [
+        "glassnik-001"
+      ],
+      "pixabay_download_filename": "aberrantrealities-organic-flow-1015-remastered-485950",
+      "pixabay_id_from_filename": "485950",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/02/16/audio_319aa4d8db.mp3?filename=aberrantrealities-organic-flow-1015-remastered-485950.mp3",
+      "downloaded_at": "2026-10-25T23:27:16.652975",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs1.mp3",
+      "track_ids": [
+        "glassnik-002"
+      ],
+      "pixabay_download_filename": "alexgrohl-energetic-action-sport-500409",
+      "pixabay_id_from_filename": "500409",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/03/12/audio_bea8e8877a.mp3?filename=alexgrohl-energetic-action-sport-500409.mp3",
+      "downloaded_at": "2026-10-25T23:26:42.912668",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs10.mp3",
+      "track_ids": [
+        "glassnik-011"
+      ],
+      "pixabay_download_filename": "kornevmusic-upbeat-happy-corporate-487426",
+      "pixabay_id_from_filename": "487426",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/02/19/audio_8e10e01af1.mp3?filename=kornevmusic-upbeat-happy-corporate-487426.mp3",
+      "downloaded_at": "2026-10-25T23:27:09.824538",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs11.mp3",
+      "track_ids": [
+        "glassnik-012"
+      ],
+      "pixabay_download_filename": "lightstockmusic-strong-character-powerful-fuzz-action-sport-rock-513742",
+      "pixabay_id_from_filename": "513742",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/04/10/audio_5e1f52fabd.mp3?filename=lightstockmusic-strong-character-powerful-fuzz-action-sport-rock-513742.mp3",
+      "downloaded_at": "2026-10-25T23:26:49.591526",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs12.mp3",
+      "track_ids": [
+        "glassnik-013"
+      ],
+      "pixabay_download_filename": "magpiemusic-action-race-rock-music-513682",
+      "pixabay_id_from_filename": "513682",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/04/10/audio_9c26dccc52.mp3?filename=magpiemusic-action-race-rock-music-513682.mp3",
+      "downloaded_at": "2026-10-25T23:27:00.609311",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs13.mp3",
+      "track_ids": [
+        "glassnik-014"
+      ],
+      "pixabay_download_filename": "magpiemusic-action-trailer-promo-rock-513687",
+      "pixabay_id_from_filename": "513687",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/04/10/audio_65bf7d6d97.mp3?filename=magpiemusic-action-trailer-promo-rock-513687.mp3",
+      "downloaded_at": "2026-10-25T23:25:56.098241",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs14.mp3",
+      "track_ids": [
+        "glassnik-015"
+      ],
+      "pixabay_download_filename": "tunetank-christmas-347469",
+      "pixabay_id_from_filename": "347469",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/06/06/audio_1365c74320.mp3?filename=tunetank-christmas-347469.mp3",
+      "downloaded_at": "2026-10-25T22:45:57.048167",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs15.mp3",
+      "track_ids": [
+        "glassnik-016"
+      ],
+      "pixabay_download_filename": "alec_koff-carnaval-484622",
+      "pixabay_id_from_filename": "484622",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/02/13/audio_358644a2e3.mp3?filename=alec_koff-carnaval-484622.mp3",
+      "downloaded_at": "2026-10-25T22:47:13.496328",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs16.mp3",
+      "track_ids": [
+        "glassnik-017"
+      ],
+      "pixabay_download_filename": "alexguz-funk-amp-breakbeat-upbeat-advertising-happy-cook-541097",
+      "pixabay_id_from_filename": "541097",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/06/09/audio_168302b854.mp3?filename=alexguz-funk-amp-breakbeat-upbeat-advertising-happy-cook-541097.mp3",
+      "downloaded_at": "2026-10-25T22:46:50.294621",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs17.mp3",
+      "track_ids": [
+        "glassnik-018"
+      ],
+      "pixabay_download_filename": "alexzavesa-dance-playful-night-510786",
+      "pixabay_id_from_filename": "510786",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/03/29/audio_e7b410d7e3.mp3?filename=alexzavesa-dance-playful-night-510786.mp3",
+      "downloaded_at": "2026-10-25T22:47:45.089229",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs18.mp3",
+      "track_ids": [
+        "glassnik-019"
+      ],
+      "pixabay_download_filename": "artmylife-powerful-dramatic-trailer-514242",
+      "pixabay_id_from_filename": "514242",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/04/11/audio_cdd73691db.mp3?filename=artmylife-powerful-dramatic-trailer-514242.mp3",
+      "downloaded_at": "2026-10-25T22:47:54.674304",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs19.mp3",
+      "track_ids": [
+        "glassnik-020"
+      ],
+      "pixabay_download_filename": "vaitsez-vlog-vlog-beat-620108",
+      "pixabay_id_from_filename": "620108",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/13/audio_f06d71ce85.mp3?filename=vaitsez-vlog-vlog-beat-620108.mp3",
+      "downloaded_at": "2026-10-21T04:18:40.429245",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs2.mp3",
+      "track_ids": [
+        "glassnik-003"
+      ],
+      "pixabay_download_filename": "alexgrohl-motivation-sport-rock-trailer-478796",
+      "pixabay_id_from_filename": "478796",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/02/03/audio_438da929a7.mp3?filename=alexgrohl-motivation-sport-rock-trailer-478796.mp3",
+      "downloaded_at": "2026-10-25T23:27:42.075016",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs20.mp3",
+      "track_ids": [
+        "glassnik-021"
+      ],
+      "pixabay_download_filename": "audioknap-trailer-intro-620276",
+      "pixabay_id_from_filename": "620276",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/14/audio_7f50643f9c.mp3?filename=audioknap-trailer-intro-620276.mp3",
+      "downloaded_at": "2026-10-21T04:18:22.881946",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs21.mp3",
+      "track_ids": [
+        "glassnik-022"
+      ],
+      "pixabay_download_filename": "danyvin-chill-rnb-621264",
+      "pixabay_id_from_filename": "621264",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/16/audio_6246fd0710.mp3?filename=danyvin-chill-rnb-621264.mp3",
+      "downloaded_at": "2026-10-21T04:17:47.524650",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs22.mp3",
+      "track_ids": [
+        "glassnik-023"
+      ],
+      "pixabay_download_filename": "ikoliks-children-ukulele-upbeat-positive-pop-rock-622115",
+      "pixabay_id_from_filename": "622115",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/17/audio_4745e3d274.mp3?filename=ikoliks-children-ukulele-upbeat-positive-pop-rock-622115.mp3",
+      "downloaded_at": "2026-10-21T04:17:27.666745",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs23.mp3",
+      "track_ids": [
+        "glassnik-024"
+      ],
+      "pixabay_download_filename": "loka_music-inspiring-travel-acoustic-621191",
+      "pixabay_id_from_filename": "621191",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/16/audio_82e78afb72.mp3?filename=loka_music-inspiring-travel-acoustic-621191.mp3",
+      "downloaded_at": "2026-10-21T04:17:34.655862",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs24.mp3",
+      "track_ids": [
+        "glassnik-025"
+      ],
+      "pixabay_download_filename": "miromaxmusic-stylish-funk-smooth-party-no-copyright-620664",
+      "pixabay_id_from_filename": "620664",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/14/audio_1106942755.mp3?filename=miromaxmusic-stylish-funk-smooth-party-no-copyright-620664.mp3",
+      "downloaded_at": "2026-10-21T04:18:29.452853",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs25.mp3",
+      "track_ids": [
+        "glassnik-026"
+      ],
+      "pixabay_download_filename": "primalhousemusic-no-more-beautiful-night-621105",
+      "pixabay_id_from_filename": "621105",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/15/audio_ebb0713a8f.mp3?filename=primalhousemusic-no-more-beautiful-night-621105.mp3",
+      "downloaded_at": "2026-10-21T04:17:54.902755",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs26.mp3",
+      "track_ids": [
+        "glassnik-027"
+      ],
+      "pixabay_download_filename": "sound4stock-halloween-spooky-music-620458",
+      "pixabay_id_from_filename": "620458",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/14/audio_2f36d95e1e.mp3?filename=sound4stock-halloween-spooky-music-620458.mp3",
+      "downloaded_at": "2026-10-21T04:18:00.595058",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs27.mp3",
+      "track_ids": [],
+      "pixabay_download_filename": "vaitsez-vlog-vlog-beat-620108",
+      "pixabay_id_from_filename": "620108",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/13/audio_f06d71ce85.mp3?filename=vaitsez-vlog-vlog-beat-620108.mp3",
+      "downloaded_at": "2026-10-25T22:16:17.572051",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs28.mp3",
+      "track_ids": [
+        "glassnik-028"
+      ],
+      "pixabay_download_filename": "audioera-stylish-trailer-percussion-622881",
+      "pixabay_id_from_filename": "622881",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/19/audio_0983229bdb.mp3?filename=audioera-stylish-trailer-percussion-622881.mp3",
+      "downloaded_at": "2026-10-25T22:14:50.516457",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs29.mp3",
+      "track_ids": [
+        "glassnik-029"
+      ],
+      "pixabay_download_filename": "bombinsound-halloween-suspense-horror-halloween-waltz-619348",
+      "pixabay_id_from_filename": "619348",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/12/audio_e7ad04da66.mp3?filename=bombinsound-halloween-suspense-horror-halloween-waltz-619348.mp3",
+      "downloaded_at": "2026-10-25T22:16:03.286260",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs3.mp3",
+      "track_ids": [
+        "glassnik-004"
+      ],
+      "pixabay_download_filename": "audioknap-music-free-458044",
+      "pixabay_id_from_filename": "458044",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/12/28/audio_4b7b5920b9.mp3?filename=audioknap-music-free-458044.mp3",
+      "downloaded_at": "2026-10-25T23:28:52.124301",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs30.mp3",
+      "track_ids": [
+        "glassnik-030"
+      ],
+      "pixabay_download_filename": "eugenemyers-the-borderland-620019",
+      "pixabay_id_from_filename": "620019",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/13/audio_139bda94d4.mp3?filename=eugenemyers-the-borderland-620019.mp3",
+      "downloaded_at": "2026-10-25T22:16:11.884365",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs31.mp3",
+      "track_ids": [
+        "glassnik-031"
+      ],
+      "pixabay_download_filename": "ikoliks-uplifting-action-sport-energetic-rock-619094",
+      "pixabay_id_from_filename": "619094",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/11/audio_8ffd879474.mp3?filename=ikoliks-uplifting-action-sport-energetic-rock-619094.mp3",
+      "downloaded_at": "2026-10-25T22:15:57.535585",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs32.mp3",
+      "track_ids": [],
+      "pixabay_download_filename": "loka_music-inspiring-travel-acoustic-621191",
+      "pixabay_id_from_filename": "621191",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/16/audio_82e78afb72.mp3?filename=loka_music-inspiring-travel-acoustic-621191.mp3",
+      "downloaded_at": "2026-10-25T22:15:15.167975",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs33.mp3",
+      "track_ids": [
+        "glassnik-032"
+      ],
+      "pixabay_download_filename": "nastelbom-suspense-suspense-background-623748",
+      "pixabay_id_from_filename": "623748",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/20/audio_a5a52c9b39.mp3?filename=nastelbom-suspense-suspense-background-623748.mp3",
+      "downloaded_at": "2026-10-25T22:14:40.068160",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs34.mp3",
+      "track_ids": [],
+      "pixabay_download_filename": "primalhousemusic-no-more-beautiful-night-621105",
+      "pixabay_id_from_filename": "621105",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/15/audio_ebb0713a8f.mp3?filename=primalhousemusic-no-more-beautiful-night-621105.mp3",
+      "downloaded_at": "2026-10-25T22:15:29.244543",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs35.mp3",
+      "track_ids": [],
+      "pixabay_download_filename": "sound4stock-halloween-spooky-music-620458",
+      "pixabay_id_from_filename": "620458",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/14/audio_2f36d95e1e.mp3?filename=sound4stock-halloween-spooky-music-620458.mp3",
+      "downloaded_at": "2026-10-25T22:15:40.657018",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs36.mp3",
+      "track_ids": [
+        "glassnik-033"
+      ],
+      "pixabay_download_filename": "audioera-cinematic-background-music-618542",
+      "pixabay_id_from_filename": "618542",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/10/audio_6cc9b8c9ed.mp3?filename=audioera-cinematic-background-music-618542.mp3",
+      "downloaded_at": "2026-10-25T22:45:39.345746",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs37.mp3",
+      "track_ids": [
+        "glassnik-034"
+      ],
+      "pixabay_download_filename": "audioknap-the-hip-hop-618430",
+      "pixabay_id_from_filename": "618430",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/10/audio_a72f8f1d42.mp3?filename=audioknap-the-hip-hop-618430.mp3",
+      "downloaded_at": "2026-10-25T22:45:14.399445",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs38.mp3",
+      "track_ids": [
+        "glassnik-035"
+      ],
+      "pixabay_download_filename": "energysound-stomp-drum-percussion-513744",
+      "pixabay_id_from_filename": "513744",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/04/10/audio_c1717f7407.mp3?filename=energysound-stomp-drum-percussion-513744.mp3",
+      "downloaded_at": "2026-10-25T22:48:02.183489",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs39.mp3",
+      "track_ids": [
+        "glassnik-036"
+      ],
+      "pixabay_download_filename": "fassounds-escape-your-love-upbeat-fashion-pop-dance-412230",
+      "pixabay_id_from_filename": "412230",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/09/29/audio_77a36612dd.mp3?filename=fassounds-escape-your-love-upbeat-fashion-pop-dance-412230.mp3",
+      "downloaded_at": "2026-10-25T22:46:57.094179",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs4.mp3",
+      "track_ids": [
+        "glassnik-005"
+      ],
+      "pixabay_download_filename": "bransboynd-night-summer-lounge-473222",
+      "pixabay_id_from_filename": "473222",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/01/25/audio_20fd9bac7e.mp3?filename=bransboynd-night-summer-lounge-473222.mp3",
+      "downloaded_at": "2026-10-25T23:28:16.580642",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs40.mp3",
+      "track_ids": [
+        "glassnik-037"
+      ],
+      "pixabay_download_filename": "grand_project-wonders-of-the-earth-550792",
+      "pixabay_id_from_filename": "550792",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/06/13/audio_73aac427fe.mp3?filename=grand_project-wonders-of-the-earth-550792.mp3",
+      "downloaded_at": "2026-10-25T22:46:35.914840",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs41.mp3",
+      "track_ids": [
+        "glassnik-038"
+      ],
+      "pixabay_download_filename": "grumpynora-lay-back-619255",
+      "pixabay_id_from_filename": "619255",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/12/audio_4ac5099923.mp3?filename=grumpynora-lay-back-619255.mp3",
+      "downloaded_at": "2026-10-25T22:46:04.244086",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs42.mp3",
+      "track_ids": [
+        "glassnik-039"
+      ],
+      "pixabay_download_filename": "gvidon-gvidon-medicine-364031",
+      "pixabay_id_from_filename": "364031",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/06/23/audio_61f7224981.mp3?filename=gvidon-gvidon-medicine-364031.mp3",
+      "downloaded_at": "2026-10-25T22:47:37.311378",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs43.mp3",
+      "track_ids": [
+        "glassnik-040"
+      ],
+      "pixabay_download_filename": "ikoliks_aj-background-music-320427",
+      "pixabay_id_from_filename": "320427",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/03/29/audio_2e521992ec.mp3?filename=ikoliks_aj-background-music-320427.mp3",
+      "downloaded_at": "2026-10-25T22:47:20.774813",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs44.mp3",
+      "track_ids": [
+        "glassnik-041"
+      ],
+      "pixabay_download_filename": "jonasblakewood-background-music-618629",
+      "pixabay_id_from_filename": "618629",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/10/audio_5ee48dc179.mp3?filename=jonasblakewood-background-music-618629.mp3",
+      "downloaded_at": "2026-10-25T22:45:23.745291",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs45.mp3",
+      "track_ids": [
+        "glassnik-042"
+      ],
+      "pixabay_download_filename": "kontraa-water-afro-pop-music-445661",
+      "pixabay_id_from_filename": "445661",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/12/11/audio_249561b3fc.mp3?filename=kontraa-water-afro-pop-music-445661.mp3",
+      "downloaded_at": "2026-10-25T22:47:06.980676",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs46.mp3",
+      "track_ids": [
+        "glassnik-043"
+      ],
+      "pixabay_download_filename": "lnplusmusic-sport-sports-rock-music-597971",
+      "pixabay_id_from_filename": "597971",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/09/05/audio_75ff83e729.mp3?filename=lnplusmusic-sport-sports-rock-music-597971.mp3",
+      "downloaded_at": "2026-10-25T22:46:13.286165",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs47.mp3",
+      "track_ids": [
+        "glassnik-044"
+      ],
+      "pixabay_download_filename": "lnplusmusic-suspense-tension-suspenseful-tense-323181",
+      "pixabay_id_from_filename": "323181",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/04/05/audio_c3cb571f3b.mp3?filename=lnplusmusic-suspense-tension-suspenseful-tense-323181.mp3",
+      "downloaded_at": "2026-10-25T22:46:20.078292",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs48.mp3",
+      "track_ids": [
+        "glassnik-045"
+      ],
+      "pixabay_download_filename": "miromaxmusic-club-no-copyright-618622",
+      "pixabay_id_from_filename": "618622",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/10/audio_650d9e91a5.mp3?filename=miromaxmusic-club-no-copyright-618622.mp3",
+      "downloaded_at": "2026-10-25T22:45:19.534264",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs49.mp3",
+      "track_ids": [
+        "glassnik-046"
+      ],
+      "pixabay_download_filename": "musicdream-dramatic-cinematic-documentary-609202",
+      "pixabay_id_from_filename": "609202",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/09/23/audio_ca70d954dd.mp3?filename=musicdream-dramatic-cinematic-documentary-609202.mp3",
+      "downloaded_at": "2026-10-25T22:46:27.580779",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs5.mp3",
+      "track_ids": [
+        "glassnik-006"
+      ],
+      "pixabay_download_filename": "freemusiclab-dark-cyberpunk-i-free-background-music-i-free-music-lab-release-469493",
+      "pixabay_id_from_filename": "469493",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/01/20/audio_7fd1a0d3a2.mp3?filename=freemusiclab-dark-cyberpunk-i-free-background-music-i-free-music-lab-release-469493.mp3",
+      "downloaded_at": "2026-10-25T23:28:33.842658",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs50.mp3",
+      "track_ids": [
+        "glassnik-047"
+      ],
+      "pixabay_download_filename": "polytunes-heroes-never-die-617232",
+      "pixabay_id_from_filename": "617232",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/14/audio_d2ca221d26.mp3?filename=polytunes-heroes-never-die-617232.mp3",
+      "downloaded_at": "2026-10-25T22:45:49.672217",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs51.mp3",
+      "track_ids": [
+        "glassnik-048"
+      ],
+      "pixabay_download_filename": "sigmamusicart-no-copyright-music-537751",
+      "pixabay_id_from_filename": "537751",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/06/04/audio_7985c1bbf8.mp3?filename=sigmamusicart-no-copyright-music-537751.mp3",
+      "downloaded_at": "2026-10-25T22:46:43.095950",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs52.mp3",
+      "track_ids": [
+        "glassnik-049"
+      ],
+      "pixabay_download_filename": "producesplatinum-vlog-hip-hop-483574",
+      "pixabay_id_from_filename": "483574",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/02/12/audio_ef715196dc.mp3?filename=producesplatinum-vlog-hip-hop-483574.mp3",
+      "downloaded_at": "2026-10-25T23:27:25.634945",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs53.mp3",
+      "track_ids": [
+        "glassnik-050"
+      ],
+      "pixabay_download_filename": "sonican-lo-fi-music-loop-sentimental-jazzy-love-473154",
+      "pixabay_id_from_filename": "473154",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/01/25/audio_1dd7f3126d.mp3?filename=sonican-lo-fi-music-loop-sentimental-jazzy-love-473154.mp3",
+      "downloaded_at": "2026-10-25T23:28:24.204447",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs54.mp3",
+      "track_ids": [
+        "glassnik-051"
+      ],
+      "pixabay_download_filename": "tunetank-inspiring-cinematic-music-409347",
+      "pixabay_id_from_filename": "409347",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/09/23/audio_1b6f4de1c4.mp3?filename=tunetank-inspiring-cinematic-music-409347.mp3",
+      "downloaded_at": "2026-10-25T23:27:50.438371",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs6.mp3",
+      "track_ids": [
+        "glassnik-007"
+      ],
+      "pixabay_download_filename": "giorgiovitte-berry-groovy-bass-trap-476603",
+      "pixabay_id_from_filename": "476603",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/01/30/audio_5c7e11e1c0.mp3?filename=giorgiovitte-berry-groovy-bass-trap-476603.mp3",
+      "downloaded_at": "2026-10-25T23:27:59.134327",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs7.mp3",
+      "track_ids": [
+        "glassnik-008"
+      ],
+      "pixabay_download_filename": "ilyatruhanov-for-p-453681",
+      "pixabay_id_from_filename": "453681",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2025/12/18/audio_fcab73293f.mp3?filename=ilyatruhanov-for-p-453681.mp3",
+      "downloaded_at": "2026-10-25T23:29:00.150777",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs8.mp3",
+      "track_ids": [
+        "glassnik-009"
+      ],
+      "pixabay_download_filename": "kontraa-no-sleep-hiphop-music-473847",
+      "pixabay_id_from_filename": "473847",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/01/26/audio_9233313997.mp3?filename=kontraa-no-sleep-hiphop-music-473847.mp3",
+      "downloaded_at": "2026-10-25T23:28:07.240246",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "Songs9.mp3",
+      "track_ids": [
+        "glassnik-010"
+      ],
+      "pixabay_download_filename": "kornevmusic-epic-478847",
+      "pixabay_id_from_filename": "478847",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/02/03/audio_9d35baf92a.mp3?filename=kornevmusic-epic-478847.mp3",
+      "downloaded_at": "2026-10-25T23:27:33.688352",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "artur_aravidi_music-a-quiet-courtyard-lofi-621847.mp3",
+      "track_ids": [
+        "glassnik-053"
+      ],
+      "pixabay_download_filename": "artur_aravidi_music-a-quiet-courtyard-lofi-621847",
+      "pixabay_id_from_filename": "621847",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/17/audio_dbf90ac6af.mp3?filename=artur_aravidi_music-a-quiet-courtyard-lofi-621847.mp3",
+      "downloaded_at": "2026-10-28T02:01:24.046136",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "echobrainz-africa-623614.mp3",
+      "track_ids": [
+        "glassnik-054"
+      ],
+      "pixabay_download_filename": "echobrainz-africa-623614",
+      "pixabay_id_from_filename": "623614",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/20/audio_e57e7ab7ea.mp3?filename=echobrainz-africa-623614.mp3",
+      "downloaded_at": "2026-10-28T02:01:08.488168",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "echobrainz-upbeat-indie-rock-624221.mp3",
+      "track_ids": [
+        "glassnik-055"
+      ],
+      "pixabay_download_filename": "echobrainz-upbeat-indie-rock-624221",
+      "pixabay_id_from_filename": "624221",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/10/21/audio_fca351841e.mp3?filename=echobrainz-upbeat-indie-rock-624221.mp3",
+      "downloaded_at": "2026-10-28T02:01:03.840071",
+      "referer": "https://pixabay.com/"
+    },
+    {
+      "pool_file": "purrplecat-long-day-518602.mp3",
+      "track_ids": [
+        "glassnik-052"
+      ],
+      "pixabay_download_filename": "purrplecat-long-day-518602",
+      "pixabay_id_from_filename": "518602",
+      "pixabay_cdn_url": "https://cdn.pixabay.com/download/audio/2026/04/24/audio_c8a99a93d5.mp3?filename=purrplecat-long-day-518602.mp3",
+      "downloaded_at": "2026-10-28T02:00:55.104864",
+      "referer": "https://pixabay.com/"
+    }
+  ]
+}
