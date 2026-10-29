@@ -1,0 +1,7 @@
+# Local demo audio is manually sourced and should not be committed by default
+public/audio/*.mp3
+.DS_Store
+.env
+.env.*
+# assets/audio-pool/
+assets/audio-pool
