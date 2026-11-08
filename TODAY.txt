@@ -1033,3 +1033,12 @@ THE FIVE SONGS OF THE AFTERNOON (28 October, later)
 - The response document to the checklist was regenerated after the
   fixes (B6 now marked DONE with evidence; the register item upgraded
   to IDENTIFICATION COMPLETE 59/59) and committed for the record.
+
+- The manager's 6 Nov checklist sheet itself was marked up (same
+  document, not a new one): 10 boxes ticked as done with evidence,
+  13 marked partial with the named gap under each, 4 left open with
+  the next action, and a dated note line under every item incl. the
+  handover pack. A legend at the top explains the marks. Saved as
+  Glassnik_Bhargav_Music_Prototype_Checklist_06_Nov_2026_MARKED.docx
+  in the project folder (the WhatsApp folder is read-only) and
+  committed here for the record.
