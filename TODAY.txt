@@ -931,3 +931,105 @@ THE FIVE SONGS OF THE AFTERNOON (28 October, later)
 - The licence register is unchanged: 0 of 59 rows verified, the
   "music rights unverified" badge stays in the app, and the 28 October
   deferral decision stands as written above.
+
+---------------------------------------------------------------
+9 NOVEMBER - MANAGER/ COLLEAGUE ACCEPTANCE CHECKLIST ANSWERED
+---------------------------------------------------------------
+
+- The colleague's/manager's acceptance checklist (6 Nov, "Bhargav -
+  Music Prototype Acceptance Checklist") was answered item by item,
+  with a rule that mirrors the project's own honesty rules: a box is
+  marked DONE only where evidence exists and was re-checked today;
+  PARTIAL names the exact remaining gap; nothing is ticked on the
+  strength of a README claim. The response was checked against
+  commit b9ba654 (branch main, clean tree, checked 9 Nov).
+
+- Result at a glance: DONE with evidence - A1 (standalone answer),
+  B1 (counts: 59 collected / 0 verified / 0 cleared), D1 (honest
+  device matrix), D3+D4 (iOS/Android requirements documented),
+  E1-E4 (scope discipline). PARTIAL - A2 (only the live screen share
+  remains), A3+A4 (joint steps with Kazi), B2/B5/B7 (identification
+  complete 59/59; licence verdicts 0/59 per the 28 Oct deferral),
+  C1-C6 (automated evidence exists; the missing half of every row is
+  one 10-15 min screen recording), D5 (only the diagram missing).
+  NOT DONE - B3/B4 (licence determination, deferred), B6 (release
+  allowlist), D2 (real device tests), D6 (hosting/CDN analysis),
+  and handover item 3 (screen recording).
+
+- NEW FINDING (urgency noted): data/catalogue.json marks ALL 59
+  tracks approved_for_production: true, while the verified count is
+  0/59 - exactly the "misleading labels" item the checklist blocks
+  on (B6). The gating mechanism already exists in the code
+  (recommender.ts gates production mode on the strict boolean), and
+  the schema comment itself says false must remain the safe default
+  until review. A fix (flip 59 rows to false, keep tests honest) was
+  offered on 9 Nov; decision recorded below when made.
+
+- Fresh evidence generated today for the response: npm test 114/114
+  passed; npm run build succeeded; repository file/audio counts
+  re-confirmed (120 files, 59 songs).
+
+- The response document: Glassnik_Music_Checklist_Response_09_Nov_
+  2026.docx (in the project folder, ready to send). It also notes
+  for the reviewer that the repo is PRIVATE since 29 Oct - the four
+  GitHub links in the checklist return 404 without a Collaborators
+  invite.
+
+---------------------------------------------------------------
+9 NOVEMBER (DECISIONS + FIXES EXECUTED)
+---------------------------------------------------------------
+
+- DECISION (owner, via the assistant): B6 label fix APPROVED and
+  executed the same day. All 59 catalogue rows now carry
+  approved_for_production: false - the safe default the schema itself
+  demands - and the release allowlist is genuinely engaged:
+  production mode now selects NOTHING until a licence row is
+  completed and a row is flipped back with evidence. Research mode
+  (what the demo runs) is unchanged.
+
+- REAL FINDING BEHIND THE FIX: the flip exposed a provider bug the
+  old data hid - when production mode had no eligible track, the app
+  left the last already-assigned track PLAYING (the allowlist leaked).
+  Fixed in MusicProvider: a decision with no eligible track now
+  pauses the running audio (nothing may keep playing through an old
+  source). Two continuity unit tests were rewritten to prove the
+  honest behaviour: production stops an unverified catalogue; music
+  returns under the user's control when switching back to research.
+
+- TESTS UPDATED TO TELL THE TRUTH (they had yesterday's assumption
+  baked in): five tests previously asserted "59 approved" or relied
+  on production mode returning music. They now assert the honest
+  state: 0/59 approved, invalid-approval count 0, allowlist holds for
+  every experience, anti-stereotype checks run in research mode.
+  Result: npm test 114/114 passed (local, 9 Nov).
+
+- BROWSER BATTERY RE-RUN after the provider change (Playwright
+  browsers reinstalled after the folder move):
+  Chromium 56/56 passed, WebKit 56/56 passed.
+
+- REGISTER IDENTITY PASS (approved by owner): all 59 rows of
+  data/licence-review.csv now carry the REAL recording identity
+  derived from the macOS download stamps - title (from the actual
+  Pixabay download filename) and creator handle - replacing the
+  fictional placeholders ("Amber Avenue" etc.). Mapping is
+  checksum-based (register checksum -> audio-library -> pool file ->
+  stamp), and each row's item page URL was cross-checked against the
+  stamp's Pixabay item ID: 59/59 match. That cross-check EXPOSED one
+  leftover error: the 4 excerpt rows (glassnik-056..059) still held
+  guessed URLs from before the stamp work; they now point to their
+  PARENT recording's item page, because the physical evidence
+  (audio-library origin detail) shows each excerpt is cut from that
+  same recording. Excerpt notes record the parent linkage (including
+  the 28 Oct de-duplication for glassnik-056 = glassnik-020's
+  recording).
+
+- IMPORTANT LIMIT, still true: these titles/creators/URLs are
+  IDENTIFICATION from downloaded-file evidence, NOT licence
+  verification. The register's licence verdicts remain 0/59 verified
+  ("UNKNOWN" columns untouched); reviewer/date columns remain empty;
+  no row is claimed cleared. The per-track pass remains deferred as
+  decided on 28 October.
+
+- The response document to the checklist was regenerated after the
+  fixes (B6 now marked DONE with evidence; the register item upgraded
+  to IDENTIFICATION COMPLETE 59/59) and committed for the record.

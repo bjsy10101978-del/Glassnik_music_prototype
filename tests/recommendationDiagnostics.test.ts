@@ -70,20 +70,23 @@ describe('audio library diagnostics', () => {
     expect(AUDIO_LIBRARY).toHaveLength(59);
     expect(AVAILABLE_AUDIO_FILES).toHaveLength(59);
 
-    // Every emitted file exists, every record is playable and enabled.
+    // Every emitted file exists and every record is playable.
     for (const track of tracks) {
       const emitted = path.join(ROOT, 'public', track.file_reference as string);
       expect(fs.existsSync(emitted), `${track.track_id} -> ${track.file_reference}`).toBe(true);
     }
     const enabledCount = tracks.filter((t) => t.approved_for_production === true).length;
-    console.log(`    approved/enabled records (research + production variety): ${enabledCount}/59`);
-    expect(enabledCount).toBe(59);
+    console.log(`    approved_for_production records (safe default until the licence pass): ${enabledCount}/59`);
+    // Honest baseline (9 Nov 2026): no licence row is completed, so nothing
+    // may claim production approval. The gate lives in the engine; this only
+    // checks the data keeps telling the truth.
+    expect(enabledCount).toBe(0);
 
     // The random picks must run by unique audio, not by one reused file.
     const origins = new Set(AUDIO_LIBRARY.map((entry) => entry.origin));
     expect(origins).toContain('approved_pool_recording');
     expect(origins).toContain('approved_pool_excerpt');
-    console.log(`[a] OK - all 59 files are registered, playable and enabled.\n`);
+    console.log(`[a] OK - all 59 files are registered and playable; all rows unverified (safe default).\n`);
   });
 
   it('recommends distinct category tracks for the sample experiences', () => {

@@ -310,10 +310,14 @@ describe('catalogue shape', () => {
     }
   });
 
-  it('approves all fifty-nine pool-backed recordings for production', () => {
+  it('leaves all fifty-nine rows unapproved until the licence pass completes', () => {
+    // Honest baseline (9 Nov 2026): 0/59 rows are rights-verified, so 0/59
+    // may claim production approval. The engine's allowlist depends on this
+    // strict boolean staying false until a row is genuinely cleared.
     const approved = tracks.filter((track) => track.approved_for_production);
-    expect(approved).toHaveLength(59);
-    expect(approved.map((track) => track.file_reference)).toEqual(
+    expect(approved).toHaveLength(0);
+    // The library itself is intact: every file reference still present, in order.
+    expect(tracks.map((track) => track.file_reference)).toEqual(
       Array.from({ length: 59 }, (_, index) => `audio/track-${index + 1}.mp3`),
     );
   });

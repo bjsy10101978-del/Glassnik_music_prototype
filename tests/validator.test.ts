@@ -70,7 +70,9 @@ describe('valid project data', () => {
 
   it('reports production approval counts honestly', () => {
     const result = validateAll(realInput());
-    expect(result.summary.productionApprovedCount).toBe(59);
+    // 9 Nov 2026: no licence row is completed, so nothing may claim approval -
+    // and zero rows carry an invalid non-boolean approval value either.
+    expect(result.summary.productionApprovedCount).toBe(0);
     expect(result.summary.invalidApprovalCount).toBe(0);
   });
 

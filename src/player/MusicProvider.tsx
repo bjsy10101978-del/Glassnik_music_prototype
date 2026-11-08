@@ -421,7 +421,14 @@ export function MusicProvider({
   // Apply a changed track to the engine. Same track => untouched engine.
   useEffect(() => {
     const recommendation = decision?.recommendation;
-    if (!recommendation?.track) return;
+    if (!recommendation?.track) {
+      // No eligible track for the current decision (production mode with an
+      // unverified catalogue, or an emptied pool): the release allowlist must
+      // not leave the last track running through its already-assigned src.
+      // An active engine is paused; nothing new may start.
+      if (decision) engine.pause();
+      return;
+    }
     const url = toAudioUrl(recommendation.track.file_reference, AVAILABLE_AUDIO_FILES);
     if (!url) return;
     if (appliedTrackRef.current === recommendation.track.track_id) return;

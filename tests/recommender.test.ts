@@ -102,35 +102,35 @@ describe('Beach context', () => {
 
 describe('Anti-stereotype rules', () => {
   it('Tokyo shopping does not select traditional Japanese music', () => {
-    for (const mode of ['research', 'production'] as const) {
-      const result = recommend(inputFor('exp-tokyo-shopping', { mode }));
-      expect(result.track).not.toBeNull();
-      const genreBlob = (result.track?.genres ?? []).join(' ').toLowerCase();
-      expect(genreBlob).not.toMatch(
-        /traditional|folk|gagaku|shamisen|koto|enka|taiko|minyo|japanese/,
-      );
-      // Selection is explained by documented metadata, not by the city name.
-      expect([
-        'place_type_match',
-        'category_match',
-        'destination_match',
-        'general_fallback',
-      ]).toContain(result.reason);
-    }
+    // Anti-stereotype mapping is a data-quality rule, verified on the real
+    // catalogue. It runs in research mode because the production-mode gate
+    // (eligibility by approval) is verified separately in the Modes tests -
+    // since 9 November 2026 the real rows are all unverified, so production
+    // mode correctly returns no track at all.
+    const result = recommend(inputFor('exp-tokyo-shopping'));
+    expect(result.track).not.toBeNull();
+    const genreBlob = (result.track?.genres ?? []).join(' ').toLowerCase();
+    expect(genreBlob).not.toMatch(
+      /traditional|folk|gagaku|shamisen|koto|enka|taiko|minyo|japanese/,
+    );
+    // Selection is explained by documented metadata, not by the city name.
+    expect([
+      'place_type_match',
+      'category_match',
+      'destination_match',
+      'general_fallback',
+    ]).toContain(result.reason);
   });
 
   it('Paris historic street does not select accordion music', () => {
-    for (const mode of ['research', 'production'] as const) {
-      const result = recommend(inputFor('exp-paris-historic', { mode }));
-      expect(result.track).not.toBeNull();
-      const genreBlob = (result.track?.genres ?? []).join(' ').toLowerCase();
-      expect(genreBlob).not.toMatch(/accordion|musette|chanson|french/);
-    }
-    const research = recommend(inputFor('exp-paris-historic'));
+    const result = recommend(inputFor('exp-paris-historic'));
+    expect(result.track).not.toBeNull();
+    const genreBlob = (result.track?.genres ?? []).join(' ').toLowerCase();
+    expect(genreBlob).not.toMatch(/accordion|musette|chanson|french/);
     // The trip's category pool ("walking") supplies the track; the
     // destination string carries no meaning on its own.
-    expect(research.reason).toBe('category_match');
-    expect(research.track?.categories).toContain('walking');
+    expect(result.reason).toBe('category_match');
+    expect(result.track?.categories).toContain('walking');
   });
 
   it('never maps destinations to genres anywhere in the engine output', () => {
@@ -233,19 +233,26 @@ describe('Fallback behaviour', () => {
 });
 
 describe('Modes', () => {
-  it('production mode never selects entries without explicit approval', () => {
+  it('production mode selects nothing while the real catalogue is unverified (allowlist holds)', () => {
+    // Since 9 November 2026 every real catalogue row carries
+    // approved_for_production: false until its licence row is completed.
+    // The release allowlist must therefore hold the door shut: production
+    // mode returns no track for every experience and reports the exclusions,
+    // while research mode keeps working (that is what the demo uses).
     for (const exp of experiences) {
-      const result = recommend(inputFor(exp.experience_id, { mode: 'production' }));
-      if (result.track) {
-        expect(result.track.approved_for_production).toBe(true);
-      }
+      const production = recommend(inputFor(exp.experience_id, { mode: 'production' }));
+      expect(production.track).toBeNull();
+      expect(production.eligibleCandidateCount).toBe(0);
+      expect(production.notes.join(' ')).toMatch(/Production mode/i);
+      const research = recommend(inputFor(exp.experience_id));
+      expect(research.track).not.toBeNull();
     }
   });
 
   it('research mode may select unapproved entries, production mode may not', () => {
     // Fixture: one unapproved and one approved track sharing a category.
-    // All library recordings are pool-backed and production-eligible, so the
-    // difference between the modes is isolated on synthetic data.
+    // The real library rows are unverified since 9 Nov 2026, so the mode
+    // difference is isolated on synthetic data here.
     const base = {
       ...tracks[0],
       categories: ['mountain'],

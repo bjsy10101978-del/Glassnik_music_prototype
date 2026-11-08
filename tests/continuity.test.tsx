@@ -120,6 +120,13 @@ function Probe() {
         production
       </button>
       <button
+        data-testid="research"
+        type="button"
+        onClick={() => music.setMode('research')}
+      >
+        research
+      </button>
+      <button
         data-testid="musictoggle"
         type="button"
         onClick={() => music.toggleMusic(!music.musicEnabled)}
@@ -217,10 +224,8 @@ describe('continuous playback across consecutive videos', () => {
     expect(fake.playCalls).toBe(playCallsBefore + 1);
   });
 
-  it('does not restart audio when a context change resolves to the same track', async () => {
+  it('switching to production mode with an unverified catalogue stops the music (allowlist)', async () => {
     renderProbe();
-    // Research and production mode resolve the Kuala Lumpur shopping trip to
-    // the same approved track, so switching modes must not restart the audio.
     await waitFor(() => expect(text('track')).toBe('glassnik-006'));
     await click('playpause');
     await waitFor(() => expect(text('status')).toBe('playing'));
@@ -231,14 +236,17 @@ describe('continuous playback across consecutive videos', () => {
     await click('production');
     await waitFor(() => expect(text('mode')).toBe('production'));
 
-    expect(text('track')).toBe('glassnik-006');
-    expect(text('reason')).toBe('category_match');
+    // No real row is licence-cleared yet, so production mode may keep
+    // nothing playing: the panel shows no track and the running audio is
+    // paused - it must not continue silently through the old source.
+    expect(text('track')).toBe('none');
+    await waitFor(() => expect(text('status')).toBe('paused'));
     expect(fake.srcAssignments).toBe(assignmentsBefore);
     expect(fake.playCalls).toBe(playCallsBefore);
-    expect(text('status')).toBe('playing');
+    expect(fake.pauseCalls).toBeGreaterThanOrEqual(1);
   });
 
-  it('switching to production mode keeps the approved music playing', async () => {
+  it('returns to working music when the mode goes back to research', async () => {
     renderProbe();
     await click('phuquoc');
     await waitFor(() => expect(text('track')).toBe('glassnik-002'));
@@ -249,16 +257,22 @@ describe('continuous playback across consecutive videos', () => {
     const playCallsBefore = fake.playCalls;
 
     await click('production');
-    await waitFor(() => expect(text('mode')).toBe('production'));
+    await waitFor(() => expect(text('track')).toBe('none'));
+    await waitFor(() => expect(text('status')).toBe('paused'));
 
-    // Every library recording is a production-eligible pool-backed track,
-    // so the same approved track keeps playing: no restart, no new source.
-    expect(text('track')).toBe('glassnik-002');
-    expect(text('reason')).toBe('category_match');
-    expect(fake.srcAssignments).toBe(assignmentsBefore);
+    // The allowlist blocked research data from production; switching back to
+    // research the recommendation stands again: the same track label returns
+    // with its unchanged audio source (no restart), and playback only ever
+    // starts on the user's own press - nothing autoplays after a gate stop.
+    await click('research');
+    await waitFor(() => expect(text('mode')).toBe('research'));
+    await waitFor(() => expect(text('track')).toBe('glassnik-002'));
     expect(fake.src).toBe('/audio/track-2.mp3');
-    expect(fake.playCalls).toBe(playCallsBefore);
+
+    await click('playpause');
     await waitFor(() => expect(text('status')).toBe('playing'));
+    expect(fake.srcAssignments).toBe(assignmentsBefore);
+    expect(fake.playCalls).toBe(playCallsBefore + 1);
   });
 
   it('stops playback when music is switched off and resumes on switch on', async () => {
