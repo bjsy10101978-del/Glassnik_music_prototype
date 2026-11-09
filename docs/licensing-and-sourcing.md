@@ -532,6 +532,13 @@ guide tells you what the licence says, the human still has to see the item
 page and sign the row. When a row is complete, that is the only moment its
 `approved_for_production` may become `true`.
 
+### Printable procedure and status report
+
+A printable version of this procedure — with the current status (0/59
+signed), the corrected claim and trademark wording, and the dual sign-off
+rule — is in `Glassnik_Licensing_Verification_Report_09_Nov_2026.docx` at the
+repository root.
+
 ## What the app shows the user
 
 The recommendation panel labels every track with its source status, and the
