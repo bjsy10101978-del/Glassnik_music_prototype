@@ -326,6 +326,10 @@ export class AudioEngine implements AudioEngineLike {
       this.emit({ status: 'paused' });
     }
 
+    // A newer transition (or an explicit Play/Pause) superseded this one while
+    // it was loading: it must not touch the volume on the way out.
+    if (token !== this.transitionToken || this.disposed) return false;
+
     if (fadeMs > 0 && shouldPlay) {
       this.el.volume = 0;
       await this.fade(this.userVolume, fadeMs, token);

@@ -79,7 +79,58 @@ Android / iPhone: the same engine + data, with native playback shells for
 background audio, lock screen/notification controls and interruption
 handling — the concrete list lives in `docs/platform-compatibility.md`.
 
-## 5. What integration into the real product requires (checklist)
+## 5. Architecture at a glance
+
+```mermaid
+flowchart TB
+  subgraph Data["Shared data (JSON / TS manifest)"]
+    CAT["catalogue.json<br/>59 tracks + licence fields"]
+    TAX["taxonomy.json<br/>categories / place types"]
+    EXP["sample_experiences.json<br/>video metadata shaped like Glassnik"]
+    MAN["audioManifest.ts<br/>playable files"]
+  end
+
+  subgraph Engine["Decision engine — pure TypeScript, no DOM"]
+    CTX["buildContext(experience)"]
+    KEY["context key / grouping key"]
+    REC["recommend({context, tracks, mode})"]
+    CTX --> KEY --> REC
+  end
+
+  subgraph Web["Web playback shell (this prototype)"]
+    MP["MusicProvider<br/>one decision, preferences, auto-advance"]
+    AE["audioEngine<br/>one audio element, fades, error/skip"]
+    UI["Viewer bar · Recommendation panel<br/>Credits · Diagnostics"]
+  end
+
+  subgraph Apps["Future app shells (shared engine + data)"]
+    AND["Android: WebView + foreground<br/>MediaSession service"]
+    IOS["iOS: WKWebView + AVAudioSession<br/>MPNowPlayingInfoCenter"]
+  end
+
+  CAT --> REC
+  TAX --> CTX
+  EXP --> CTX
+  MAN --> MP
+  CTX --> MP
+  KEY --> MP
+  REC --> MP
+  MP --> AE
+  AE --> UI
+  MP --> UI
+  REC -. reuse as-is .-> AND
+  REC -. reuse as-is .-> IOS
+  CAT -. same JSON .-> AND
+  CAT -. same JSON .-> IOS
+```
+
+Everything in the top three boxes is shared. Only the playback shell (the
+web box today; the native boxes later) differs per platform. That is the
+integration contract: Glassnik feeds video metadata into `buildContext`,
+the engine returns one track decision per Experience or grouping, and the
+platform shell turns that decision into audio.
+
+## 6. What integration into the real product requires (checklist)
 
 1. **Metadata feed**: per-video `category_id` / `place_type` /
    `destination` (and optional music_context) from Glassnik's real system;
@@ -88,7 +139,9 @@ handling — the concrete list lives in `docs/platform-compatibility.md`.
 2. **Grouping wiring**: pass the viewer's active browse filter as the
    grouping (section 3).
 3. **Audio hosting**: a decision on serving audio (same-origin assets vs
-   CDN) and environment-specific paths in `src/audioManifest.ts`.
+   CDN) and environment-specific paths in `src/audioManifest.ts`. The code
+   already supports a build-time `VITE_AUDIO_BASE_URL`; the measured size
+   and cost analysis is in `docs/hosting-and-delivery.md`.
 4. **Licence clearance first**: every played track must have a completed,
    evidenced row in `data/licence-review.csv` (`docs/licensing-and-sourcing.md`).
    The build keeps unverified tracks out of claims; production sign-off is
@@ -99,7 +152,7 @@ handling — the concrete list lives in `docs/platform-compatibility.md`.
 6. **Remove research-only surfaces** (research mode toggle, diagnostics
    inspector) or keep them behind a feature flag for the team.
 
-## 6. Direct answers to the brief's questions
+## 7. Direct answers to the brief's questions
 
 - **Does it already use Glassnik's existing video metadata?** Not yet — it
   uses a faithful sample dataset shaped exactly like the required metadata.

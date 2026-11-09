@@ -12,3 +12,6 @@ dist/
 # never commit the upload zips or mac junk
 *.zip
 .DS_Store
+
+# Word lock files (created while the .docx files are open)
+~$*

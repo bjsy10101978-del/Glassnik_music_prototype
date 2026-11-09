@@ -1042,3 +1042,74 @@ THE FIVE SONGS OF THE AFTERNOON (28 October, later)
   Glassnik_Bhargav_Music_Prototype_Checklist_06_Nov_2026_MARKED.docx
   in the project folder (the WhatsApp folder is read-only) and
   committed here for the record.
+
+---------------------------------------------------------------
+9 NOVEMBER (PARTIAL-CLOSING PASS: LICENCE RE-CHECK, BATTERY
+EXTENSION, DOCS)
+---------------------------------------------------------------
+
+- PIXABAY LICENCE SUMMARY RE-READ (owner request): the live page
+  https://pixabay.com/service/license-summary/ was fetched again on
+  9 Nov. Same three allowances (free use, no attribution required,
+  modification allowed) and same prohibitions (standalone
+  distribution, trademark use on goods/services, immoral/illegal,
+  misleading, use as part of a trademark). No wording change since
+  the 26 Oct capture; captured in docs/licensing-and-sourcing.md.
+
+- B3 USE-CASE DETERMINATION documented (docs/licensing-and-sourcing
+  .md): the licence questions answered for Glassnik's actual use
+  (embedded background music under video Experiences, commercial
+  app-store product, paid tier possible), with the design controls
+  that keep it inside the permitted case (no standalone listening
+  surface, no download, one-edit takedown, empty production mode
+  until approval). Explicitly NOT legal advice and it ticks NO
+  register row.
+
+- B4 QUICK GUIDE prepared (same doc): the 59-row human pass reduced
+  to a ~1-minute routine per row (open item URL, match identity,
+  confirm site-wide licence link, record shield/certificate, fill
+  the same source-level answers, sign reviewer/date/evidence). The
+  register remains 0/59 verified and every verdict cell UNKNOWN -
+  only a human who has opened the page may change that.
+
+- BROWSER BATTERY EXTENDED 56 -> 67 checks:
+  - pause/resume (4): pause pauses the element, time freezes,
+    resume continues from the paused position;
+  - reload behaviour (5): nothing autoplays after reload, saved
+    volume and music menu are restored, Play starts again;
+  - failed audio loads (4): with every audio request blocked the
+    app ends in a clear error state (not a crash), stays rendered,
+    and recovers to Playing when the network returns. The console
+    check now excludes only the deliberate network-failure noise.
+  A real engine race was found while making the recovery check
+  honest: a superseded transition could still set the element volume
+  to 0 after losing the token. Fixed in audioEngine.transitionTo
+  (token guard after play). npm test: 116/116 (2 new toAudioUrl
+  tests). Battery: Chromium 67/67 and WebKit 67/67, 9 Nov.
+
+- D5 ARCHITECTURE DIAGRAM added to docs/integration-guide.md
+  (Mermaid: shared data + pure engine + web shell + future native
+  shells), with the integration contract stated below it.
+
+- D6 HOSTING ANALYSIS added (docs/hosting-and-delivery.md) with
+  measured numbers (59 files / 203 MB audio, 231 MB dist, 960 KB app
+  shell, 3.4 MB average file) and options/costs for same-origin
+  hosting vs object-storage CDN. Audio base URL is now configurable
+  at build time via VITE_AUDIO_BASE_URL (default unchanged,
+  /audio/...); no component changes needed to move audio to a CDN.
+
+- A2 DEMO SCRIPT added (docs/demo-script.md): click-by-click 12-15
+  minute recording script covering the gesture gate, continuity,
+  context/grouping switches, uploads, volume/menu, reload, track
+  end, credits and diagnostics - plus what not to claim (no licence
+  verdicts, Spotify not connected).
+
+- DOC TRUTH FIXES: licensing doc no longer says all 59 are
+  approved_for_production: true (they are false since the B6 fix);
+  register is marked MASTER (do not re-run licence:csv); platform
+  doc now says 67 checks; playback architecture notes production
+  mode currently selects nothing.
+
+- HONEST STATE, unchanged: 0/59 licence verdicts; production mode
+  plays nothing; the four open checklist items that need a human
+  (B3/B4 sign-off, D2 with Kazi, D6 decision) are not claimed done.

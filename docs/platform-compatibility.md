@@ -26,14 +26,17 @@ Only the playback shell is platform-specific.
 
 ## Automated verification (this repository)
 
-One battery, `npm run check:browser`, runs 56 checks against the local dev
+One battery, `npm run check:browser`, runs 67 checks against the local dev
 site: gesture-gated start, continuity across sequences and across grouping
 browsing, one-assignment context switches, the music menu (Glassnik / No
-Music, Spotify slot), volume persistence, uploads, track-end auto-advance,
-credits and diagnostics.
+Music, Spotify slot), volume persistence, pause/resume, reload behaviour
+(nothing autoplays; saved volume and music choice restored), uploads,
+track-end auto-advance, failed audio loads (clear error state, no crash,
+recovery when the network returns), credits and diagnostics.
 
-- **Chromium engine: 56/56 passed.**
-- **Safari engine (WebKit 27.2, Playwright `BROWSER=webkit`): 56/56 passed.**
+- **Chromium engine: 67/67 passed (9 November 2026).**
+- **Safari engine (WebKit 27.2, Playwright `BROWSER=webkit`): 67/67 passed
+  (9 November 2026).**
   This is the engine Safari is built on, so the two iOS/macOS-sensitive
   behaviours that matter — playback only after a user gesture, and no
   restarts on context changes — now have Safari-engine evidence.

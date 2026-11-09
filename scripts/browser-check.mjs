@@ -385,6 +385,56 @@ try {
     (await page.evaluate(() => localStorage.getItem('glassnik.volume'))) === '0.42',
   );
 
+  // ---- Pause / resume (C5 evidence) ----
+  await page.locator('[aria-label="Pause music"]').click();
+  await page.waitForFunction(
+    () => document.querySelector('.player-status')?.textContent === 'Paused',
+    undefined,
+    { timeout: 5000 },
+  );
+  const pausedAt = await state();
+  check('Pause pauses the media element', pausedAt.element.paused === true);
+  await sleep(500);
+  check(
+    'Time frozen while paused',
+    Math.abs((await state()).element.currentTime - pausedAt.element.currentTime) < 0.05,
+  );
+  await page.locator('[aria-label="Play music"]').click();
+  await page.waitForFunction(
+    () => document.querySelector('.player-status')?.textContent === 'Playing',
+    undefined,
+    { timeout: 5000 },
+  );
+  await sleep(400);
+  check(
+    'Resume continues from the paused position',
+    (await state()).element.currentTime > pausedAt.element.currentTime + 0.15,
+  );
+
+  // ---- Reload behaviour (C6 evidence) ----
+  // A reload must never autoplay (browser gesture policy) and must restore the
+  // saved volume and music-source choice.
+  await page.reload({ waitUntil: 'networkidle' });
+  await sleep(500);
+  const reloaded = await state();
+  check(
+    'After reload nothing autoplays (gesture gate holds)',
+    reloaded.element === null || reloaded.element.paused === true,
+  );
+  check(
+    'Saved volume restored after reload',
+    Math.abs((reloaded.element?.volume ?? 0) - 0.42) < 0.005,
+  );
+  check('Volume slider shows the saved value', (await page.locator('[aria-label="Volume"]').inputValue()) === '42');
+  check('Music menu restored to Glassnik Music', (await page.locator('.player select').inputValue()) === 'glassnik');
+  await page.locator('[aria-label="Play music"]').click();
+  await page.waitForFunction(
+    () => document.querySelector('.player-status')?.textContent === 'Playing',
+    undefined,
+    { timeout: 5000 },
+  );
+  check('Play after reload starts the music', (await state()).element.paused === false);
+
   // ---- Other tabs still work ----
   await page.locator('#tab-experiences').click();
   await sleep(200);
@@ -486,7 +536,52 @@ try {
     !diag.includes('has no file under public/'),
   );
 
-  check('No console errors', consoleErrors.length === 0, consoleErrors.join(' | '));
+  // ---- Failed audio loads (C6 evidence) ----
+  // Deliberately block every audio request, then skip: the app must surface a
+  // clear error state (never a crash), stay usable, and recover when the
+  // network returns. The deliberate aborts create expected console network
+  // noise, which the console check below excludes explicitly.
+  await page.locator('#tab-video').click();
+  await page.route('**/audio/*.mp3', (route) => route.abort());
+  await page.locator('[aria-label="Skip to next recommended track"]').click();
+  // The engine skips up to 5 broken files in a row; wait for the error state
+  // to SETTLE (half a second with no new attempt) before unblocking, so the
+  // recovery check cannot race an in-flight auto-skip.
+  await page.waitForFunction(
+    () => {
+      const el = document.querySelector('.player-status');
+      const w = window;
+      if (!el || !el.className.includes('status-error')) {
+        w.__settledErrorSince = null;
+        return false;
+      }
+      w.__settledErrorSince = w.__settledErrorSince ?? performance.now();
+      return performance.now() - w.__settledErrorSince >= 500;
+    },
+    undefined,
+    { timeout: 30000, polling: 100 },
+  );
+  check('Blocked audio files end in a clear error state (no crash)', true);
+  check(
+    'App still renders while audio fails',
+    (await page.locator('.app-header h1').textContent()) === 'Glassnik',
+  );
+  await page.unroute('**/audio/*.mp3');
+  await page.locator('[aria-label="Play music"]').click();
+  await page.waitForFunction(
+    () => document.querySelector('.player-status')?.textContent === 'Playing',
+    undefined,
+    { timeout: 10000 },
+  );
+  check('Play recovers after the network returns', true);
+
+  const networkNoise = consoleErrors.filter((e) => /ERR_FAILED|net::|Failed to load resource/i.test(e));
+  const unexpectedErrors = consoleErrors.filter((e) => !networkNoise.includes(e));
+  check(
+    'No console errors beyond the deliberate network failures',
+    unexpectedErrors.length === 0,
+    unexpectedErrors.join(' | '),
+  );
   check('No uncaught page errors', pageErrors.length === 0, pageErrors.join(' | '));
 } catch (error) {
   check('Script completed without exceptions', false, String(error));

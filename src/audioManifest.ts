@@ -70,8 +70,21 @@ export function durationFor(fileReference: string | null | undefined): number | 
 }
 
 /**
+ * Optional origin prefix for audio files, e.g. a CDN host. Empty by default:
+ * files are served from the same origin under `/audio/`. Set
+ * `VITE_AUDIO_BASE_URL` at build time (for example
+ * `VITE_AUDIO_BASE_URL=https://cdn.example.com`) to move the audio to a CDN
+ * without touching any component.
+ */
+const AUDIO_BASE_URL = String(
+  (import.meta.env as Record<string, string | undefined>).VITE_AUDIO_BASE_URL ?? '',
+)
+  .trim()
+  .replace(/\/+$/, '');
+
+/**
  * Maps a catalogue `file_reference` (relative to public/) to the browser URL.
- * `audio/track-1.mp3` -> `/audio/track-1.mp3`.
+ * `audio/track-1.mp3` -> `/audio/track-1.mp3` (or `<VITE_AUDIO_BASE_URL>/audio/...`).
  * Returns null for empty values or values that do not map to an available file.
  */
 export function toAudioUrl(
@@ -82,5 +95,5 @@ export function toAudioUrl(
   const trimmed = fileReference.trim().replace(/^\/+/, '').replace(/^public\//, '');
   if (!trimmed.toLowerCase().endsWith('.mp3')) return null;
   if (!available.includes(trimmed)) return null;
-  return `/${trimmed}`;
+  return `${AUDIO_BASE_URL}/${trimmed}`;
 }

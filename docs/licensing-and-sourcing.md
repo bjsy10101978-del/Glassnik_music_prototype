@@ -134,7 +134,12 @@ diagnostics panel in the app shows it.
 ## The licence review register
 
 `data/licence-review.csv` is the working spreadsheet for rights
-verification, one row per track, regenerated with `npm run licence:csv`.
+verification, one row per track. It began as the output of
+`npm run licence:csv`, but the file is now the **master record**: its
+identities were corrected against the download stamps and four excerpt URLs
+point at their parent recordings. Do not regenerate it — the generator
+script is kept for reference only, and re-running it would overwrite the
+corrections.
 Its 30 columns carry everything the catalogue already knows (title,
 artist, file, checksum, duration, audio origin, candidate source URL and
 its status, content-ID flag, review status) plus one column for every
@@ -187,10 +192,12 @@ Facts we measured, not facts we invented:
   committed when the project's rights and size rules allow it.
 
 **Rights are still open.** A file existing in the repository is not a
-licence. All 59 tracks carry `approved_for_production: true` under the
-pool-backed convention, but none of them has been licence-verified by a
-human, and even the flag means "backed by a file we produced", not "cleared
-by a lawyer".
+licence. Since the 9 November 2026 truth pass, all 59 tracks carry
+`approved_for_production: false`: none of them has been licence-verified by
+a human, so production mode selects no track at all and the player pauses
+when no eligible track exists. The earlier "pool-backed" convention — where
+a file we produced was treated as approval — was removed because it made an
+unverified library look approved.
 
 ## Source licence terms, as published (captured 26 October 2026)
 
@@ -250,6 +257,14 @@ downloads, and any single track can be removed with one catalogue row and
 a rebuild. The app-store distribution question and the per-track
 content-ID exposure (the shield icon) remain rows the human reviewer
 decides, per track. Nothing is assumed.
+
+**Re-checked 9 November 2026.** The live summary page was read again on
+this date. It states the same three allowances (free use, no attribution
+required, modification allowed) and the same prohibitions (standalone
+distribution, trademark use on goods and services, immoral or illegal use,
+misleading use, use as part of a trademark). No wording change since the
+26 October capture; the legally binding text remains the Content License in
+the Terms of Service.
 
 ### Pixabay — Music FAQ (captured 28 October 2026)
 
@@ -363,6 +378,48 @@ the licence page). What needs the human review anyway: whether
 product the way Glassnik distributes it, and the video-games exclusion
 context — both rows sit UNKNOWN in the register until checked.
 
+## Glassnik use-case determination (9 November 2026)
+
+This is the project's documented reading of the Pixabay Content License for
+Glassnik's specific use case, prepared from the summary, the Music FAQ and
+the Terms captured above. It is **not legal advice**, and it does **not**
+tick any row of `data/licence-review.csv`: the per-track human pass remains
+the only thing that can mark a track verified. It answers the checklist
+question "do the commercial rights work for our use?" at the level the
+published licence allows a careful reader to answer it.
+
+**The use case.** Glassnik plays background music under travel video
+Experiences inside an app/website. The music is chosen per Experience (or
+per Category / Place / Location grouping), starts only after the viewer
+presses Play, continues while the viewer browses, and changes when the
+context changes. There is no screen that lists tracks for standalone
+listening, no audio download, and any track can be removed by editing one
+catalogue row and rebuilding. The planned product is commercial
+(app-store distribution), potentially with a paid tier.
+
+| Licence question | Answer for this use case | Basis |
+| --- | --- | --- |
+| Free use in a commercial product | Yes | Summary: "Use Content for free" — no non-commercial restriction |
+| Attribution | Not required; credit is given anyway on the Music credits page | Summary: use "without attribution" |
+| Modification | Not needed (files ship unmodified); allowed if ever needed | Summary: modify or adapt allowed |
+| Standalone distribution | Not applicable — music is never offered on its own; it is embedded under video Experiences inside the app | Summary/FAQ: standalone means no creative effort and substantially the same form; embedding in a greater work is the allowed case |
+| Subscription / paid tier | Allowed while the music stays embedded in the creative project and is not distributed separately | FAQ: OTT / subscription platforms answer |
+| App-store distribution | The site-wide licence does not forbid distribution as part of an app; this reading should be confirmed in the human/legal pass | Terms §5 grant + standalone prohibition |
+| Content ID claims | Possible per track; a claim is not a copyright strike; dispute kit = item URL + licence link + download record | FAQ: shield icon, claims, dispute |
+| Third-party rights | The user's responsibility to check; the per-track pass records the shield state and any extra rights | Summary: third-party rights note; Terms §5 disclaimer |
+
+**Design controls that keep the use inside the permitted case** (all already
+in the prototype): the music decision is tied to an Experience or a browse
+grouping; the viewer shows no track names; the credits page names every
+track and creator; there is no audio download; a takedown is one catalogue
+edit plus a rebuild; production mode plays nothing until a human has
+approved a track.
+
+**What this determination does not do.** It does not verify any individual
+track, it does not decide the Content ID shield state per track, and it is
+not a legal opinion. Those stay with the human per-track pass (quick guide
+below) and, if the team wants one, a lawyer's review of this page.
+
 ## The manual workflow for a real track
 
 1. Search for the music manually in a browser.
@@ -436,6 +493,44 @@ Every verified track keeps its evidence in
 The `evidence_location` column of the register points at that folder. If a
 cell cannot be evidenced, it stays `UNKNOWN` and the row stays flagged
 `UNVERIFIED - do not use in production until every UNKNOWN is resolved`.
+
+## The 59-row licence pass — quick guide (prepared 9 November 2026)
+
+Every one of the 59 recordings is Pixabay content under the same site-wide
+Pixabay Content License (see the one-licence note above). That makes the
+human pass repetitive rather than hard: the licence answers are the same for
+every row, and what differs is the item-page fact check and the Content ID
+shield. A careful reviewer can do a row in about a minute.
+
+For each row in `data/licence-review.csv`:
+
+1. Open the row's `candidate_source_url` (or `source_search_url` when the
+   candidate is marked unconfirmed). Check that the page's title, creator
+   and duration match the row. If they do not match, do not tick anything —
+   mark the row's source status and move on.
+2. Confirm the page links to the Pixabay Content License summary (it is the
+   same licence site-wide). Save the item page as `item-page.pdf` and the
+   licence summary as `licence-page.pdf` in
+   `assets/licence-evidence/<track_id>/`.
+3. Look for the Content ID shield icon. Record it in
+   `content_id_claim_risk`; if the shield is present, download the
+   certificate and save it as `certificate.pdf`.
+4. Fill the licence-answer columns with the same source-level answers the
+   determination above records (commercial use: yes; hosting/streaming: yes;
+   continuous background playback: yes; permanent embedding: yes;
+   standalone distribution: not applicable — never offered standalone;
+   subscription/premium: yes while embedded; attribution: not required;
+   extra permissions: none known; content-ID risk: per the shield).
+5. Fill `reviewer`, `review_date` and `evidence_location`, set the row status
+   to `VERIFIED`, and write `record.md` with the URLs and what you saw.
+6. Excerpt rows (`glassnik-056`…`059`) reuse their parent recording's
+   evidence folder; do not duplicate the PDFs.
+
+The four excerpt parents are already in the register, so the pass is 59 item
+pages, not 63. Do not fill a cell from memory or from this guide alone: the
+guide tells you what the licence says, the human still has to see the item
+page and sign the row. When a row is complete, that is the only moment its
+`approved_for_production` may become `true`.
 
 ## What the app shows the user
 

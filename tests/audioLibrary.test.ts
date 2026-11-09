@@ -24,7 +24,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import audioLibraryJson from '../data/audio-library.json';
-import { AUDIO_LIBRARY, AVAILABLE_AUDIO_FILES, checksumFor } from '../src/audioManifest';
+import { AUDIO_LIBRARY, AVAILABLE_AUDIO_FILES, checksumFor, toAudioUrl } from '../src/audioManifest';
 import { tracks } from '../src/data/dataset';
 
 const ROOT = process.cwd();
@@ -333,5 +333,19 @@ describe('catalogue shape', () => {
       expect(entry.origin_detail).toBeTruthy();
       expect(entry.provenance_note).toBeTruthy();
     }
+  });
+});
+
+describe('toAudioUrl', () => {
+  it('serves audio from the same origin by default', () => {
+    expect(toAudioUrl('audio/track-1.mp3')).toBe('/audio/track-1.mp3');
+    expect(toAudioUrl('/audio/track-1.mp3')).toBe('/audio/track-1.mp3');
+    expect(toAudioUrl('public/audio/track-1.mp3')).toBe('/audio/track-1.mp3');
+  });
+
+  it('rejects unknown files and non-mp3 references', () => {
+    expect(toAudioUrl('audio/not-in-the-library.mp3')).toBeNull();
+    expect(toAudioUrl('audio/track-1.wav')).toBeNull();
+    expect(toAudioUrl(null)).toBeNull();
   });
 });

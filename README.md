@@ -80,7 +80,9 @@ npm run check:browser  # in another terminal
 
 ## Where to read more
 
-- `docs/licensing-and-sourcing.md` — the full licensing policy, the captured Pixabay/Mixkit licence terms (dated), the evidence convention and `data/licence-review.csv` (59 rows, all verification columns still `UNKNOWN`).
-- `docs/platform-compatibility.md` — what is verified on which browser engine (Chromium + Safari engine), and the work items for the Android and iPhone apps.
-- `docs/integration-guide.md` — how this connects to real Glassnik metadata, the Category / Place / Location grouping rule, and direct answers about the architecture.
+- `docs/licensing-and-sourcing.md` — the full licensing policy, the captured Pixabay/Mixkit licence terms (dated), the Glassnik use-case determination, the 59-row licence-pass quick guide, the evidence convention and `data/licence-review.csv` (59 rows, all verification columns still `UNKNOWN`).
+- `docs/platform-compatibility.md` — what is verified on which browser engine (Chromium + Safari engine, 67/67 checks each), and the work items for the Android and iPhone apps.
+- `docs/integration-guide.md` — how this connects to real Glassnik metadata, the Category / Place / Location grouping rule, the architecture diagram, and direct answers about the architecture.
+- `docs/hosting-and-delivery.md` — measured sizes, hosting/CDN options and costs, and the `VITE_AUDIO_BASE_URL` switch.
+- `docs/demo-script.md` — the click-by-click script for recording the live walkthrough.
 - `docs/library-expansion-plan.md` — the plan to reach ~100 verified tracks across the 21 categories, starting with the six that have no dedicated pool.

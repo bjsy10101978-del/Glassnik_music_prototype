@@ -132,6 +132,9 @@ work while keeping "next clip → same track" behaviour.
 2. playable records (the file exists, see the audio manifest below), and
 3. mode-eligible records (production mode requires the strict boolean
    `approved_for_production === true` and a non-rejected review status).
+   Since the 9 November 2026 truth pass every track is `false`, so
+   production mode currently selects nothing and the player pauses; that is
+   deliberate — an unverified track must never be played as approved.
 
 It then picks the first non-empty tier in this fixed order: category →
 place type → destination → general fallback. (Category comes first so a
