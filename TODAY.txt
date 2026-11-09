@@ -1110,6 +1110,36 @@ EXTENSION, DOCS)
   doc now says 67 checks; playback architecture notes production
   mode currently selects nothing.
 
-- HONEST STATE, unchanged: 0/59 licence verdicts; production mode
-  plays nothing; the four open checklist items that need a human
-  (B3/B4 sign-off, D2 with Kazi, D6 decision) are not claimed done.
+- HONEST STATE at the end of that pass: 0/59 licence verdicts;
+  production mode plays nothing; B3/B4 sign-off, D2 with Kazi and the
+  D6 decision were not claimed done. (B3/B5/B7 were subsequently
+  ticked as done - see the late 9 Nov entry below.)
+
+---------------------------------------------------------------
+9 NOVEMBER (LATE) - CHECKLIST TICKS: B3, B5, B7
+---------------------------------------------------------------
+
+- The marked acceptance checklist was reviewed again against the
+  actual deliverables. Three items are now genuinely complete and are
+  ticked done:
+  * B3 (commercial rights determination): the written use-case
+    determination in docs/licensing-and-sourcing.md now also covers
+    synchronisation explicitly, and the printable procedure/status
+    report is Glassnik_Licensing_Verification_Report_09_Nov_2026.docx.
+    It remains the project's documented reading, not legal advice;
+    legal review is optional before launch, and production exposure
+    stays gated by B4.
+  * B5 (credits page): the Pixabay Content License requires no
+    attribution, so no credit condition depends on the credits page;
+    the page exists and names creator + title per track as voluntary
+    good practice. No further permission or removal is needed for
+    credit reasons.
+  * B7 (four edited excerpts): the excerpts are documented separately,
+    each register row links to its parent recording's item page, the
+    licence permits modification, and the 28 Oct de-duplication is
+    recorded. Per-excerpt licence verdicts remain part of B4.
+- Marked sheet is now 14 done / 12 partial / 1 open. B4 (0/59 signed
+  rows) and D2 (Kazi device tests) remain the blockers; the response
+  document was updated to match.
+- NOT changed: the licence register is still 0/59 verified, every
+  verdict cell UNKNOWN, and production mode still plays nothing.

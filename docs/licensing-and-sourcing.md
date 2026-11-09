@@ -405,6 +405,7 @@ catalogue row and rebuilding. The planned product is commercial
 | Standalone distribution | Not applicable — music is never offered on its own; it is embedded under video Experiences inside the app | Summary/FAQ: standalone means no creative effort and substantially the same form; embedding in a greater work is the allowed case |
 | Subscription / paid tier | Allowed while the music stays embedded in the creative project and is not distributed separately | FAQ: OTT / subscription platforms answer |
 | App-store distribution | The site-wide licence does not forbid distribution as part of an app; this reading should be confirmed in the human/legal pass | Terms §5 grant + standalone prohibition |
+| Synchronisation (music paired with video) | The project's reading: the licence's grant to use the music in creative projects covers pairing it with video; Pixabay offers no separate synchronisation licence and requires none | Summary/FAQ: use in creative projects; Terms §5 grant — confirm in the legal sign-off |
 | Content ID claims | Possible per track; a claim is not a copyright strike; dispute kit = item URL + licence link + download record | FAQ: shield icon, claims, dispute |
 | Third-party rights | The user's responsibility to check; the per-track pass records the shield state and any extra rights | Summary: third-party rights note; Terms §5 disclaimer |
 
