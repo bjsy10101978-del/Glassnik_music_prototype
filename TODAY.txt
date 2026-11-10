@@ -1221,3 +1221,28 @@ EXTENSION, DOCS)
   response document carry Kazi's 10-11 Nov report and the SHA.
   Counts remain 20 done / 7 partial / 0 open (D2, A3, A4 stay
   partial; nothing was overclaimed).
+
+---------------------------------------------------------------
+11 NOVEMBER - OWNER'S URL CHECK RECORDED (URL ONLY, NOT B4)
+---------------------------------------------------------------
+
+- The owner manually opened the candidate item URLs and reported
+  that they resolve to the correct pages. data/licence-review.csv
+  now records source_url_status=candidate_verified on 58/59 rows.
+  Corrected canonical item URLs are recorded for glassnik-002,
+  glassnik-003 and glassnik-005; their pages match the register
+  title, creator and duration.
+
+- glassnik-032 stays candidate_unverified. The owner's replacement
+  link was a search page, not an item page. The direct item URL
+  currently shows a 1:59 NastelBom track titled "Cinematic -
+  Cinematic Music", not the register title "Suspense Suspense
+  Background". It needs the exact item URL and title confirmation.
+
+- This is URL checking only. B4 remains 0/59: every licence verdict
+  cell is still UNKNOWN, review_status is still
+  pending_source_verification, and no row has a reviewer name,
+  date, evidence folder or signature. Row 001's draft signature in
+  the owner's Numbers sheet was not merged: its Content ID field is
+  ambiguous and assets/licence-evidence/glassnik-001/ does not
+  exist.

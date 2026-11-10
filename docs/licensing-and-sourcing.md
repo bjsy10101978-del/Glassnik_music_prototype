@@ -15,8 +15,9 @@ written permission where it is needed.
 - No track is cleared for a real product yet. `approved_for_production` is
   `true` for all 59 records under the pool-backed convention: the flag means
   "backed by a file we produced", not "cleared by a lawyer".
-- Every `source_url` is a **candidate** page that nobody has opened yet. The
-  catalogue says so in the data itself (`source_url_status`).
+- Every `source_url` in the generated catalogue is a **candidate** page
+  marked `source_url_status: "candidate_unverified"`. The licence-review
+  register records which URLs a human has actually opened.
 
 ## "Royalty-free" is not the same as "free to use"
 
@@ -153,6 +154,22 @@ Every verification cell starts as `UNKNOWN` and every row is flagged
 `UNVERIFIED - do not use in production until every UNKNOWN is resolved`.
 Nothing may be guessed: a cell is filled only after a human opens the real
 licence text for that recording and records the evidence location.
+
+**URL-check update, 11 November 2026.** The owner manually opened the
+candidate item URLs and the register now marks 58 of 59 rows
+`source_url_status: candidate_verified`. Corrected canonical item URLs are
+recorded for `glassnik-002`, `glassnik-003` and `glassnik-005`; their item
+pages match the register title, creator and duration. `glassnik-032` stays
+`candidate_unverified`: the replacement link supplied was a search page, and
+the direct item page currently resolves to a 1:59 NastelBom track titled
+"Cinematic - Cinematic Music", not the register title "Suspense Suspense
+Background". That row needs the exact item URL and title confirmation.
+
+This is URL checking only, not a licence pass. Every row still has
+`review_status: pending_source_verification`, every licence verdict cell is
+still `UNKNOWN`, and `verified_by` / `verified_date` are empty. The
+generated `data/catalogue.json` still says `candidate_unverified`; the CSV
+is the master record.
 
 ## The audio files
 
