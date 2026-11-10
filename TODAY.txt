@@ -1143,3 +1143,39 @@ EXTENSION, DOCS)
   document was updated to match.
 - NOT changed: the licence register is still 0/59 verified, every
   verdict cell UNKNOWN, and production mode still plays nothing.
+
+---------------------------------------------------------------
+10 NOVEMBER - KAZI PROGRESS + THE "1 FAILED OUT OF 116" QUESTION
+---------------------------------------------------------------
+
+- Kazi's PC ran the test suite: 115 passed + 1 SKIPPED - nothing
+  failed. The skipped check is "scans the pool folder and registers
+  every real audio file" in tests/recommendationDiagnostics.test.ts.
+  It verifies the ORIGINAL source recordings (assets/audio-pool/)
+  against the catalogue, and that folder is deliberately NOT committed
+  to GitHub (licensing rule: only the shipped app tracks in public/
+  audio are in the repo). The test is written to detect this: if the
+  folder is missing it skips itself instead of pretending to pass
+  (code: (POOL_DIR_EXISTS ? it : it.skip), line 61). So on another
+  machine / fresh clone: 115 passed + 1 skipped = all 116 accounted
+  for; on the developer machine the folder exists and 116/116 run.
+  The doc's "116/116" reflects the developer machine.
+
+- Kazi (reported 10 Nov, not re-verified): the engine is integrated
+  into the team app on branch feature/music-engine-integration;
+  category changes pick new tracks, revisits rotate, pause/resume
+  works; Android DEVICE tests via Expo Go passed (first play,
+  background, call, headphones, lock screen, audio focus, tab
+  switch). Not done: iPhone (deferred); the team app has NO
+  place_type field yet (category + city/place only). Marked
+  checklist updated from those reports: D2 is now PARTIAL (Expo Go
+  evidence, production-build/rerun + iPhone still owed) and the
+  A3/A4 notes name the branch and the missing place-type mapping.
+
+- The owner completed their own filled copy of the sheet (sent as a
+  PDF). The repository marked sheet remains the record of record:
+  C1/C2 manual Safari passes (9 Nov) are logged in it; C1-C6 stay
+  partial UNTIL one screen recording exists (script:
+  docs/demo-script.md). A track change on "Next clip" would have
+  been a C1 FAILURE - same track is the pass criterion; that is now
+  written under C1.
