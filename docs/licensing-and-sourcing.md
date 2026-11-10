@@ -164,6 +164,9 @@ pages match the register title, creator and duration. `glassnik-032` stays
 the direct item page currently resolves to a 1:59 NastelBom track titled
 "Cinematic - Cinematic Music", not the register title "Suspense Suspense
 Background". That row needs the exact item URL and title confirmation.
+The `title_note` and `artist_note` fields on those 58 rows now record the
+owner's item-page confirmation date; `glassnik-032` records the unresolved
+title mismatch instead.
 
 This is URL checking only, not a licence pass. Every row still has
 `review_status: pending_source_verification`, every licence verdict cell is

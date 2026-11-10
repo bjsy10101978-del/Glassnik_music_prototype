@@ -1231,7 +1231,8 @@ EXTENSION, DOCS)
   now records source_url_status=candidate_verified on 58/59 rows.
   Corrected canonical item URLs are recorded for glassnik-002,
   glassnik-003 and glassnik-005; their pages match the register
-  title, creator and duration.
+  title, creator and duration. title_note and artist_note on the 58
+  verified rows now record "confirmed on item page, 2026-11-11".
 
 - glassnik-032 stays candidate_unverified. The owner's replacement
   link was a search page, not an item page. The direct item URL
