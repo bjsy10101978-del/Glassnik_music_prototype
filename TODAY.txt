@@ -1172,10 +1172,19 @@ EXTENSION, DOCS)
   evidence, production-build/rerun + iPhone still owed) and the
   A3/A4 notes name the branch and the missing place-type mapping.
 
-- The owner completed their own filled copy of the sheet (sent as a
-  PDF). The repository marked sheet remains the record of record:
-  C1/C2 manual Safari passes (9 Nov) are logged in it; C1-C6 stay
-  partial UNTIL one screen recording exists (script:
-  docs/demo-script.md). A track change on "Next clip" would have
-  been a C1 FAILURE - same track is the pass criterion; that is now
-  written under C1.
+- The owner's completed sheet (PDF, created 9 Nov 18:35 NZDT) was
+  read with pdftotext. It marks C1-C6 DONE and states the agreed-
+  cases screen recording was completed. The recording file itself
+  was NOT found in Desktop / Downloads / Movies / iCloud Drive, so
+  the marked sheet now records the source honestly: "owner's
+  completed sheet, 9 Nov - screen recording completed; recording
+  file outside the repository". C1/C2 manual Safari passes (9 Nov)
+  remain in the notes; a track change on "Next clip" would have been
+  a C1 FAILURE - same track is the pass criterion. Add the
+  recording's filename/link to the handover before external
+  submission. The PDF's D2=open is older than Kazi's 10 Nov report,
+  so D2 stays PARTIAL (do not regress it).
+- Marked sheet is now 20 done / 7 partial / 0 open. The response
+  document was updated to match (C1-C6 done per the owner's sheet,
+  D2 partial on Kazi's report, A3/A4 note the integration branch and
+  missing place_type, counts stated).
