@@ -1188,3 +1188,36 @@ EXTENSION, DOCS)
   document was updated to match (C1-C6 done per the owner's sheet,
   D2 partial on Kazi's report, A3/A4 note the integration branch and
   missing place_type, counts stated).
+
+---------------------------------------------------------------
+11 NOVEMBER - KAZI'S iPHONE RESULT + BACKEND place_type GAP
+---------------------------------------------------------------
+
+- Kazi confirmed the branch and head SHA for the integration:
+  feature/music-engine-integration @
+  482a30386793f3a1884cea88636c2d91e169ca6b.
+
+- iPhone is now tested too, in Expo Go: it ran fine and music
+  still plays with the silent switch ON. Observed differences:
+  on iPhone music+video keep playing when the app goes to
+  background; on Android both stop. On BOTH phones music+video
+  stop on the lock screen and during a phone call. A production
+  build re-run is still pending until there is an installable dev
+  build. D2 stays PARTIAL: Expo Go is a development runtime, not
+  a production native container, and the background/lock-screen
+  differences are recorded as observed behaviour, not as passes.
+
+- place_type: the app has no such field and the backend does not
+  send one, so Kazi cannot map it app-side. A3 stays PARTIAL and
+  is now recorded as a backend/product dependency: either the
+  backend adds/sends place_type (preferred) or the engine uses
+  its tested category-pool fallback (less precise place-level
+  selection).
+
+- Docs updated: docs/platform-compatibility.md now has the
+  Expo Go device-results table and the observed background /
+  lock-screen / call behaviour; docs/integration-guide.md notes
+  the backend place_type dependency; the marked checklist and
+  response document carry Kazi's 10-11 Nov report and the SHA.
+  Counts remain 20 done / 7 partial / 0 open (D2, A3, A4 stay
+  partial; nothing was overclaimed).

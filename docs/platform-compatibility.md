@@ -51,12 +51,32 @@ check:browser`.
   Play ✅, the next song starting automatically when one finishes ✅,
   and the Kuala Lumpur 7-song rotation ✅ (song names were read on the
   Music credits page, since the viewer itself shows none).
-- **Android and iPhone devices and app WebViews.** Nothing mobile has run in
-  a real app container yet.
-- **Backgrounded playback / lock screen.** Not applicable on desktop web;
-  on mobile it needs the native configurations below.
-- **Android/IOS-specific audio interruptions** (calls, other apps claiming
-  audio) — untested until there is an app container.
+- **Production native app builds (Android/iPhone).** Kazi has run the app in
+  **Expo Go** on both phones (reported 10–11 Nov 2026, not re-verified here).
+  Expo Go is a development runtime, not a production native container; an
+  installable dev build and a production-build re-run are still owed.
+- **Backgrounded playback / lock screen.** Observed in Expo Go: iPhone
+  music+video keep playing in the background; Android both stop. On both
+  phones music+video stop on the lock screen and during a phone call. The
+  Android background stop and the lock-screen stop are recorded as observed
+  behaviour/gaps, not silently counted as passes; the native configuration
+  below is intended to change them and must be verified in the production
+  build.
+- **Android/iOS-specific audio interruptions** — partially observed: both
+  phones stop during a call (the expected interruption). Recovery after the
+  call and headphone-disconnect behaviour are not yet recorded.
+
+### Device results reported by Kazi (Expo Go)
+
+| Environment | Reported result |
+|---|---|
+| Android — Expo Go | First play ✓; background: music+video stop; call: stop; headphones ✓; lock screen: stop; audio focus ✓; tab switch ✓ |
+| iPhone — Expo Go | Runs ✓; silent switch ON: music still plays ✓; background: music+video continue; lock screen: stop; call: stop |
+| Production build | Not run — waiting for an installable dev build |
+
+Reported 10–11 Nov 2026. These are **observed behaviours**, not a formal
+PASS/FAIL against the production acceptance criteria; the production build
+is the approval environment.
 
 ## What the Android and iPhone apps need (integration items)
 
@@ -76,9 +96,14 @@ Because the engine is UI-free, the app work is playback configuration only:
 3. **Both**: platform audio focus/interruption handling (a phone call must
    pause the music and recovery on return), and headphones disconnect.
 
-Until an app container exists, none of these can be signed off — the
-honest state is "engine shared and verified on the web; playback shells
-pending".
+**Expo Go observations (10–11 Nov):** iPhone silent-switch playback works
+and iPhone background playback continues; Android background playback stops
+in Expo Go; both stop on lock screen and during calls. Treat these as shell
+behaviour to re-check in the production build, not engine results.
+
+Until a production native build exists, none of these can be signed off —
+the honest state is "engine shared and verified on the web; Expo Go shells
+observed on both phones; production playback shells pending".
 
 ## App-store timing (as requested in the brief)
 

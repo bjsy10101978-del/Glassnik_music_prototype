@@ -48,6 +48,12 @@ Only `category_id` / `place_type` / `destination` are required by the
 engine; anything absent degrades gracefully (missing place type → category
 pool; both missing → general pool), never to a crash.
 
+> **Update 11 Nov 2026 (Kazi, reported):** the current Glassnik app/backend
+> sends category + city/place but **not** `place_type`, so the app team
+> cannot map it on their side. The tested fallback keeps playback working;
+> precise place-level selection needs the backend to add/send `place_type`.
+> This is a backend/product dependency, not a 15-minute app-side mapping.
+
 ## 3. The grouping rule (the brief's central behaviour — implemented)
 
 The rule "music continues across Experiences within one Category, Place or
